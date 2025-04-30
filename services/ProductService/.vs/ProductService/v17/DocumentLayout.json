@@ -1,0 +1,274 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\infrastructure\\database\\configurations\\categoryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\database\\configurations\\categoryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\infrastructure\\database\\configurations\\productconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\database\\configurations\\productconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\infrastructure\\database\\migrations\\20250430115047_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\database\\migrations\\20250430115047_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\infrastructure\\database\\migrations\\20250430115047_initial.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\database\\migrations\\20250430115047_initial.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0251C79E-8E29-4E8F-917B-0A235F1159F2}|src\\Web.Api\\Web.Api.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\web.api\\web.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0251C79E-8E29-4E8F-917B-0A235F1159F2}|src\\Web.Api\\Web.Api.csproj|solutionrelative:src\\web.api\\web.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\repos\\llamafly-marketplace\\services\\ProductService\\Directory.Packages.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:Directory.Packages.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\infrastructure\\database\\extensions\\migrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\database\\extensions\\migrationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0251C79E-8E29-4E8F-917B-0A235F1159F2}|src\\Web.Api\\Web.Api.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\web.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0251C79E-8E29-4E8F-917B-0A235F1159F2}|src\\Web.Api\\Web.Api.csproj|solutionrelative:src\\web.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0251C79E-8E29-4E8F-917B-0A235F1159F2}|src\\Web.Api\\Web.Api.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\web.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0251C79E-8E29-4E8F-917B-0A235F1159F2}|src\\Web.Api\\Web.Api.csproj|solutionrelative:src\\web.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E075D33E-BB84-4A00-B4C9-51437AF06A30}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4734DF5-4B21-4D9C-8D59-0FF5843033AA}|src\\Domain\\Domain.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\domain\\product\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4734DF5-4B21-4D9C-8D59-0FF5843033AA}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\product\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4734DF5-4B21-4D9C-8D59-0FF5843033AA}|src\\Domain\\Domain.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\domain\\category\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4734DF5-4B21-4D9C-8D59-0FF5843033AA}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\category\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Alexey\\AppData\\Local\\SourceServer\\1ba54d5c9ed665c996fbc6b0f4e67222c14f35e4e57d1c2b7aa97a0f425ba6b2\\src\\EFCore\\Metadata\\Internal\\ConstructorBindingFactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0251C79E-8E29-4E8F-917B-0A235F1159F2}|src\\Web.Api\\Web.Api.csproj|c:\\repos\\llamafly-marketplace\\services\\productservice\\src\\web.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0251C79E-8E29-4E8F-917B-0A235F1159F2}|src\\Web.Api\\Web.Api.csproj|solutionrelative:src\\web.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1681,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryConfiguration.cs",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Configurations\\CategoryConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Database\\Configurations\\CategoryConfiguration.cs",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Configurations\\CategoryConfiguration.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Database\\Configurations\\CategoryConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:55:48.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20250430115047_initial.Designer.cs",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Migrations\\20250430115047_initial.Designer.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Database\\Migrations\\20250430115047_initial.Designer.cs",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Migrations\\20250430115047_initial.Designer.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Database\\Migrations\\20250430115047_initial.Designer.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:50:57.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20250430115047_initial.cs",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Migrations\\20250430115047_initial.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Database\\Migrations\\20250430115047_initial.cs",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Migrations\\20250430115047_initial.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Database\\Migrations\\20250430115047_initial.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:50:53.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Web.Api",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Web.Api\\Web.Api.csproj",
+              "RelativeDocumentMoniker": "src\\Web.Api\\Web.Api.csproj",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Web.Api\\Web.Api.csproj",
+              "RelativeToolTip": "src\\Web.Api\\Web.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-30T11:49:51.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Directory.Packages.props",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\Directory.Packages.props",
+              "RelativeDocumentMoniker": "Directory.Packages.props",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\Directory.Packages.props",
+              "RelativeToolTip": "Directory.Packages.props",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAAB4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-04-30T11:46:02.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Infrastructure",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Infrastructure.csproj",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Infrastructure.csproj",
+              "RelativeToolTip": "src\\Infrastructure\\Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-30T11:45:58.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MigrationExtensions.cs",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Extensions\\MigrationExtensions.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Database\\Extensions\\MigrationExtensions.cs",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Extensions\\MigrationExtensions.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Database\\Extensions\\MigrationExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:23:11.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\Category\\Category.cs",
+              "RelativeDocumentMoniker": "src\\Domain\\Category\\Category.cs",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\Category\\Category.cs",
+              "RelativeToolTip": "src\\Domain\\Category\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:25:46.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductConfiguration.cs",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Configurations\\ProductConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Database\\Configurations\\ProductConfiguration.cs",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\Database\\Configurations\\ProductConfiguration.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Database\\Configurations\\ProductConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:24:45.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\Product\\Product.cs",
+              "RelativeDocumentMoniker": "src\\Domain\\Product\\Product.cs",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\Product\\Product.cs",
+              "RelativeToolTip": "src\\Domain\\Product\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:24:19.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ConstructorBindingFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Alexey\\AppData\\Local\\SourceServer\\1ba54d5c9ed665c996fbc6b0f4e67222c14f35e4e57d1c2b7aa97a0f425ba6b2\\src\\EFCore\\Metadata\\Internal\\ConstructorBindingFactory.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\Alexey\\AppData\\Local\\SourceServer\\1ba54d5c9ed665c996fbc6b0f4e67222c14f35e4e57d1c2b7aa97a0f425ba6b2\\src\\EFCore\\Metadata\\Internal\\ConstructorBindingFactory.cs",
+              "ToolTip": "C:\\Users\\Alexey\\AppData\\Local\\SourceServer\\1ba54d5c9ed665c996fbc6b0f4e67222c14f35e4e57d1c2b7aa97a0f425ba6b2\\src\\EFCore\\Metadata\\Internal\\ConstructorBindingFactory.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Users\\Alexey\\AppData\\Local\\SourceServer\\1ba54d5c9ed665c996fbc6b0f4e67222c14f35e4e57d1c2b7aa97a0f425ba6b2\\src\\EFCore\\Metadata\\Internal\\ConstructorBindingFactory.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAuwL8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:23:41.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Web.Api\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Web.Api\\Program.cs",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Web.Api\\Program.cs",
+              "RelativeToolTip": "src\\Web.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:23:08.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:23:03.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Web.Api\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "src\\Web.Api\\appsettings.Development.json",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Web.Api\\appsettings.Development.json",
+              "RelativeToolTip": "src\\Web.Api\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-30T11:19:56.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Web.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\Web.Api\\appsettings.json",
+              "ToolTip": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Web.Api\\appsettings.json",
+              "RelativeToolTip": "src\\Web.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-30T11:19:23.41Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

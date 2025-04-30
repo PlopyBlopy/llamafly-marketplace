@@ -1,0 +1,31 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <!--.NET 9 packages. Most of them will work on .NET 8. If you need to, make the updates here individually.-->
+    <ItemGroup>
+        <!-- General -->
+        <PackageVersion Include="FluentResults" Version="3.16.0" />
+        <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+
+        <!-- Static code analysis -->
+        <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.8.0.113526" />
+        <!-- Shared -->
+        <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.4" />
+        <PackageVersion Include="Scrutor" Version="6.0.1" />
+        <!-- Application -->
+        <PackageVersion Include="MediatoR.Alternative.Lite" Version="1.0.13" />
+        <PackageVersion Include="FluentValidation" Version="11.11.0" />
+        <!-- Infrastructure -->
+        <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+
+        <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.4" />
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4" />
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.4" />
+        <!-- Web.Api -->
+        <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
+        <PackageVersion Include="Scalar.AspNetCore" Version="2.1.17" />
+        <!-- ArchitectureTests -->
+    </ItemGroup>
+</Project>

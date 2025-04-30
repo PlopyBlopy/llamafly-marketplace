@@ -1,0 +1,27 @@
+[
+  {
+    "ContainingType": "Web.Api.Endpoints.Products.Create\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__1_0",
+    "RelativePath": "api/products",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Web.Api.Endpoints.Products.Create\u002BRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Products"
+    ]
+  }
+]

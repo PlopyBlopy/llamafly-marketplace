@@ -1,0 +1,68 @@
+name: llamffly-marketplace-data
+
+volumes:
+  # pgadmin-data:
+  # auth-postgres-data:
+  # profile-postgres-data:
+  llamafly-product-postgres-data:
+  # product-redis-data:
+  # image-redis-data:
+
+services:
+  # pgadmin.general:
+  #   image: docker.io/dpage/pgadmin4:9.0.0
+  #   container_name: pgadmin.general
+  #   volumes:
+  #     - pgadmin-data:/var/lib/pgadmin
+
+  # auth.db:
+  #   image: docker.io/postgres:17.3-alpine
+  #   container_name: auth.db
+  #   volumes:
+  #     - ./postgresql/init-scripts:/docker-entrypoint-initdb.d
+  #     - auth-postgres-data:/var/lib/postgresql/data
+
+  # profile.db:
+  #   image: docker.io/postgres:17.3-alpine
+  #   container_name: profile.db
+  #   volumes:
+  #     - ./postgresql/init-scripts:/docker-entrypoint-initdb.d
+  #     - profile-postgres-data:/var/lib/postgresql/data
+
+  product.db:
+    image: docker.io/postgres:17.3-alpine
+    container_name: product.db-test
+    volumes:
+      - ./postgresql/init-scripts:/docker-entrypoint-initdb.d
+      - llamafly-product-postgres-data:/var/lib/postgresql/data
+      # - product-postgres-data:/var/lib/postgresql/data
+
+  # product.redis:
+  #   image: redis:latest
+  #   container_name: product.redis
+  #   volumes:
+  #     - product-redis-data:/data
+
+  # image.redis:
+  #   image: redis:latest
+  #   container_name: image.redis
+  #   volumes:
+  #     - image-redis-data:/data
+
+  # kafka.zoo:
+  #   image: confluentinc/cp-zookeeper:7.3.2
+  #   container_name: kafka.zoo
+  #   hostname: zoo
+
+  # kafka:
+  #   image: confluentinc/cp-kafka:7.3.2
+  #   container_name: kafka
+  #   hostname: kafka
+  #   depends_on:
+  #     - kafka.zoo
+
+  # kafka.kafdrop:
+  #   image: obsidiandynamics/kafdrop:3.31.0
+  #   container_name: kafka.kafdrop
+  #   depends_on:
+  #     - kafka

@@ -1,0 +1,337 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Application\\Application.csproj": {}
+  },
+  "projects": {
+    "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Application\\Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Alexey\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\Domain.csproj"
+              },
+              "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Shared\\Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )",
+              "versionCentrallyManaged": true
+            },
+            "MediatoR.Alternative.Lite": {
+              "target": "Package",
+              "version": "[1.0.13, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.4, )",
+              "versionCentrallyManaged": true
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[6.0.1, )",
+              "versionCentrallyManaged": true
+            },
+            "SonarAnalyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.8.0.113526, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "FluentResults": "3.16.0",
+            "FluentValidation": "11.11.0",
+            "MediatoR.Alternative.Lite": "1.0.13",
+            "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
+            "Microsoft.AspNetCore.OpenApi": "9.0.4",
+            "Microsoft.EntityFrameworkCore": "9.0.4",
+            "Microsoft.EntityFrameworkCore.Design": "9.0.4",
+            "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
+            "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+            "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+            "Scalar.AspNetCore": "2.1.17",
+            "Scrutor": "6.0.1",
+            "SonarAnalyzer.CSharp": "10.8.0.113526"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Alexey\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Shared\\Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "SonarAnalyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.8.0.113526, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "FluentResults": "3.16.0",
+            "FluentValidation": "11.11.0",
+            "MediatoR.Alternative.Lite": "1.0.13",
+            "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
+            "Microsoft.AspNetCore.OpenApi": "9.0.4",
+            "Microsoft.EntityFrameworkCore": "9.0.4",
+            "Microsoft.EntityFrameworkCore.Design": "9.0.4",
+            "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
+            "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+            "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+            "Scalar.AspNetCore": "2.1.17",
+            "Scrutor": "6.0.1",
+            "SonarAnalyzer.CSharp": "10.8.0.113526"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Shared\\Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Shared\\Shared.csproj",
+        "projectName": "Shared",
+        "projectPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\Alexey\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "FluentResults": {
+              "target": "Package",
+              "version": "[3.16.0, )",
+              "versionCentrallyManaged": true
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.4, )",
+              "versionCentrallyManaged": true
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[6.0.1, )",
+              "versionCentrallyManaged": true
+            },
+            "SonarAnalyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.8.0.113526, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "FluentResults": "3.16.0",
+            "FluentValidation": "11.11.0",
+            "MediatoR.Alternative.Lite": "1.0.13",
+            "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
+            "Microsoft.AspNetCore.OpenApi": "9.0.4",
+            "Microsoft.EntityFrameworkCore": "9.0.4",
+            "Microsoft.EntityFrameworkCore.Design": "9.0.4",
+            "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
+            "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+            "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+            "Scalar.AspNetCore": "2.1.17",
+            "Scrutor": "6.0.1",
+            "SonarAnalyzer.CSharp": "10.8.0.113526"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
