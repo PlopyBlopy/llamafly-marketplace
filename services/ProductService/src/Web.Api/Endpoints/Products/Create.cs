@@ -1,5 +1,7 @@
 ﻿using Application.Products.Create;
+using FluentResults;
 using MediatoR.Alternative.Lite;
+using Web.Api.Infrastructure;
 
 namespace Web.Api.Endpoints.Products
 {
@@ -20,9 +22,9 @@ namespace Web.Api.Endpoints.Products
                     CategoryId = request.CategoryId
                 };
 
-                var result = await sender.Send(command, ct);
+                Result<CreateProductResponse> result = await sender.Send(command, ct);
 
-                return result.IsFailed ? Results.Problem(result.ToString(), result.Errors.ToString()) : Results.Ok(result);
+                return result.Match(Results.Ok, CustomResults.Problem);
             })
             .WithTags(Tags.PRODUCTS);
         }

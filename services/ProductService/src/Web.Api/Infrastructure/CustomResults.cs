@@ -4,12 +4,11 @@ namespace Web.Api.Infrastructure
 {
     public static class CustomResults
     {
-        public static Microsoft.AspNetCore.Http.IResult Problem(Result result)
+        public static IResult Problem(ResultBase result)
         {
             if (result.IsSuccess)
-            {
                 throw new InvalidOperationException();
-            }
+
             throw new InvalidOperationException();
 
             //return Results.Problem(
