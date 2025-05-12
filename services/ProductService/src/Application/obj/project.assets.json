@@ -19,6 +19,22 @@
           }
         }
       },
+      "FluentResults.Errors/1.0.4": {
+        "type": "package",
+        "dependencies": {
+          "FluentResults": "3.16.0"
+        },
+        "compile": {
+          "lib/net9.0/FluentResults.Errors.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/FluentResults.Errors.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FluentValidation/11.11.0": {
         "type": "package",
         "compile": {
@@ -28,24 +44,6 @@
         },
         "runtime": {
           "lib/net8.0/FluentValidation.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "MediatoR.Alternative.Lite/1.0.13": {
-        "type": "package",
-        "dependencies": {
-          "FluentResults": "3.16.0",
-          "FluentValidation": "11.11.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4"
-        },
-        "compile": {
-          "lib/net9.0/MediatoR.Alternative.Lite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net9.0/MediatoR.Alternative.Lite.dll": {
             "related": ".xml"
           }
         }
@@ -257,6 +255,25 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "PlopyBlopy.MediatoR.Alternative.Lite/1.0.16": {
+        "type": "package",
+        "dependencies": {
+          "FluentResults": "3.16.0",
+          "FluentResults.Errors": "1.0.4",
+          "FluentValidation": "11.11.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4"
+        },
+        "compile": {
+          "lib/net9.0/MediatoR.Alternative.Lite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/MediatoR.Alternative.Lite.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Scrutor/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -303,9 +320,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "FluentResults": "3.16.0",
           "FluentValidation": "11.11.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
           "Scrutor": "6.0.1"
         },
         "compile": {
@@ -335,6 +352,23 @@
         "lib/netstandard2.1/FluentResults.xml"
       ]
     },
+    "FluentResults.Errors/1.0.4": {
+      "sha512": "RULqZldnGsH5egzvAD2fgfOu35qVpeAoTjfym9fw3ps59Zk9g2oTVZAgQK5nvdkskcVdrVC5f873InHL1+NChg==",
+      "type": "package",
+      "path": "fluentresults.errors/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluentresults.errors.1.0.4.nupkg.sha512",
+        "fluentresults.errors.nuspec",
+        "icon.png",
+        "lib/net9.0/FluentResults.Errors.dll",
+        "lib/net9.0/FluentResults.Errors.xml",
+        "localized/en-us/README.md",
+        "localized/ru-ru/README.md"
+      ]
+    },
     "FluentValidation/11.11.0": {
       "sha512": "cyIVdQBwSipxWG8MA3Rqox7iNbUNUTK5bfJi9tIdm4CAfH71Oo5ABLP4/QyrUwuakqpUEPGtE43BDddvEehuYw==",
       "type": "package",
@@ -358,18 +392,6 @@
         "lib/netstandard2.0/FluentValidation.xml",
         "lib/netstandard2.1/FluentValidation.dll",
         "lib/netstandard2.1/FluentValidation.xml"
-      ]
-    },
-    "MediatoR.Alternative.Lite/1.0.13": {
-      "sha512": "DoRXH/tDgw8zSffRyswNbX48vYWc9qk4rU/8ve43ay1bllO0aTtRN/2J8cBTK8ZzMYuhE9R9QjfI9csiDq2uag==",
-      "type": "package",
-      "path": "mediator.alternative.lite/1.0.13",
-      "files": [
-        ".nupkg.metadata",
-        "lib/net9.0/MediatoR.Alternative.Lite.dll",
-        "lib/net9.0/MediatoR.Alternative.Lite.xml",
-        "mediator.alternative.lite.1.0.13.nupkg.sha512",
-        "mediator.alternative.lite.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore/9.0.4": {
@@ -737,6 +759,23 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "PlopyBlopy.MediatoR.Alternative.Lite/1.0.16": {
+      "sha512": "egAT1bbL3dxpZGkXtJDvSJfUiiqNyJVjJsQxtZS2vAAzkKU4PLY259HohUTcM+ZOA21X93hWXKRiqMtTBYKV4w==",
+      "type": "package",
+      "path": "plopyblopy.mediator.alternative.lite/1.0.16",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net9.0/MediatoR.Alternative.Lite.dll",
+        "lib/net9.0/MediatoR.Alternative.Lite.xml",
+        "localized/en-us/README.md",
+        "localized/ru-ru/README.md",
+        "plopyblopy.mediator.alternative.lite.1.0.16.nupkg.sha512",
+        "plopyblopy.mediator.alternative.lite.nuspec"
+      ]
+    },
     "Scrutor/6.0.1": {
       "sha512": "5xKT6ND5GqnFzwSaYozHCJe75GFL8sPy4yw/iRFqeBFGlmqPNFpOg1T9Q0Gl2h76Cklt0ZTg6Ypkri5iUBKXsA==",
       "type": "package",
@@ -828,9 +867,9 @@
     "net9.0": [
       "Domain >= 1.0.0",
       "FluentValidation >= 11.11.0",
-      "MediatoR.Alternative.Lite >= 1.0.13",
       "Microsoft.EntityFrameworkCore >= 9.0.4",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 9.0.4",
+      "PlopyBlopy.MediatoR.Alternative.Lite >= 1.0.16",
       "Scrutor >= 6.0.1",
       "Shared >= 1.0.0",
       "SonarAnalyzer.CSharp >= 10.8.0.113526"
@@ -863,7 +902,8 @@
       ],
       "sources": {
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.pkg.github.com/PlopyBlopy/index.json": {}
       },
       "frameworks": {
         "net9.0": {
@@ -899,11 +939,6 @@
             "version": "[11.11.0, )",
             "versionCentrallyManaged": true
           },
-          "MediatoR.Alternative.Lite": {
-            "target": "Package",
-            "version": "[1.0.13, )",
-            "versionCentrallyManaged": true
-          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.4, )",
@@ -912,6 +947,11 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": {
             "target": "Package",
             "version": "[9.0.4, )",
+            "versionCentrallyManaged": true
+          },
+          "PlopyBlopy.MediatoR.Alternative.Lite": {
+            "target": "Package",
+            "version": "[1.0.16, )",
             "versionCentrallyManaged": true
           },
           "Scrutor": {
@@ -938,7 +978,10 @@
           "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "PlopyBlopy.FluentResults.Errors": "1.0.6",
+          "PlopyBlopy.MediatoR.Alternative.Lite": "1.0.16",
           "Scalar.AspNetCore": "2.1.17",
           "Scrutor": "6.0.1",
           "SonarAnalyzer.CSharp": "10.8.0.113526"
@@ -962,5 +1005,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1507",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "There are 2 package sources defined in your configuration. When using central package management, please map your package sources with package source mapping (https://aka.ms/nuget-package-source-mapping) or specify a single package source. The following sources are defined: nuget.org, PBPackages"
+    }
+  ]
 }

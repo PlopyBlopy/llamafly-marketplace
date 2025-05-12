@@ -8,26 +8,14 @@
     ".NETCoreApp,Version=v9.0": {
       "Shared/1.0.0": {
         "dependencies": {
-          "FluentResults": "3.16.0",
           "FluentValidation": "11.11.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
           "Scrutor": "6.0.1",
           "SonarAnalyzer.CSharp": "10.8.0.113526"
         },
         "runtime": {
           "Shared.dll": {}
-        }
-      },
-      "FluentResults/3.16.0": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "2.1.1",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "runtime": {
-          "lib/netstandard2.1/FluentResults.dll": {
-            "assemblyVersion": "3.16.0.0",
-            "fileVersion": "3.16.0.0"
-          }
         }
       },
       "FluentValidation/11.11.0": {
@@ -54,11 +42,14 @@
           }
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/2.1.1": {
+      "Microsoft.Extensions.Logging.Abstractions/9.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4"
+        },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "2.1.1.0",
-            "fileVersion": "2.1.1.18157"
+          "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
           }
         }
       },
@@ -74,8 +65,7 @@
           }
         }
       },
-      "SonarAnalyzer.CSharp/10.8.0.113526": {},
-      "System.Threading.Tasks.Extensions/4.5.4": {}
+      "SonarAnalyzer.CSharp/10.8.0.113526": {}
     }
   },
   "libraries": {
@@ -83,13 +73,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "FluentResults/3.16.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VWacGzOyN9k7LOKqiNLnFvqTDLbFvepHlINdM3pPTD0YWI+a+VW/Q9gcx4gmJDpDZ32cAsczz5vmRjLCL5UOhA==",
-      "path": "fluentresults/3.16.0",
-      "hashPath": "fluentresults.3.16.0.nupkg.sha512"
     },
     "FluentValidation/11.11.0": {
       "type": "package",
@@ -112,12 +95,12 @@
       "path": "microsoft.extensions.dependencymodel/8.0.2",
       "hashPath": "microsoft.extensions.dependencymodel.8.0.2.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Abstractions/2.1.1": {
+    "Microsoft.Extensions.Logging.Abstractions/9.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XRzK7ZF+O6FzdfWrlFTi1Rgj2080ZDsd46vzOjadHUB0Cz5kOvDG8vI7caa5YFrsHQpcfn0DxtjS4E46N4FZsA==",
-      "path": "microsoft.extensions.logging.abstractions/2.1.1",
-      "hashPath": "microsoft.extensions.logging.abstractions.2.1.1.nupkg.sha512"
+      "sha512": "sha512-0MXlimU4Dud6t+iNi5NEz3dO2w1HXdhoOLaYFuLPCjAsvlPQGwOT6V2KZRMLEhCAm/stSZt1AUv0XmDdkjvtbw==",
+      "path": "microsoft.extensions.logging.abstractions/9.0.4",
+      "hashPath": "microsoft.extensions.logging.abstractions.9.0.4.nupkg.sha512"
     },
     "Scrutor/6.0.1": {
       "type": "package",
@@ -132,13 +115,6 @@
       "sha512": "sha512-2+Gk4w467coeL9ozQlAN9y0mwMj3XmlacFYZE0Ptz4LC4EkmMPwY5ygYPkwg9/xJ1SIShmoAC+5Sinb3khHDng==",
       "path": "sonaranalyzer.csharp/10.8.0.113526",
       "hashPath": "sonaranalyzer.csharp.10.8.0.113526.nupkg.sha512"
-    },
-    "System.Threading.Tasks.Extensions/4.5.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
-      "path": "system.threading.tasks.extensions/4.5.4",
-      "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     }
   }
 }

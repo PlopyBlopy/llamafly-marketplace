@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "iZZBXEhoem0=",
+  "dgSpecHash": "aFMKepBpcjs=",
   "success": true,
   "projectFilePath": "C:\\repos\\llamafly-marketplace\\services\\ProductService\\src\\Web.Api\\Web.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexey\\.nuget\\packages\\fluentresults\\3.16.0\\fluentresults.3.16.0.nupkg.sha512",
+    "C:\\Users\\Alexey\\.nuget\\packages\\fluentresults.errors\\1.0.4\\fluentresults.errors.1.0.4.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\Alexey\\.nuget\\packages\\mediator.alternative.lite\\1.0.13\\mediator.alternative.lite.1.0.13.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.0\\microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.4\\microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
@@ -39,6 +39,8 @@
     "C:\\Users\\Alexey\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
+    "C:\\Users\\Alexey\\.nuget\\packages\\plopyblopy.fluentresults.errors\\1.0.6\\plopyblopy.fluentresults.errors.1.0.6.nupkg.sha512",
+    "C:\\Users\\Alexey\\.nuget\\packages\\plopyblopy.mediator.alternative.lite\\1.0.16\\plopyblopy.mediator.alternative.lite.1.0.16.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\scalar.aspnetcore\\2.1.17\\scalar.aspnetcore.2.1.17.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\scrutor\\6.0.1\\scrutor.6.0.1.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\sonaranalyzer.csharp\\10.8.0.113526\\sonaranalyzer.csharp.10.8.0.113526.nupkg.sha512",
@@ -58,5 +60,12 @@
     "C:\\Users\\Alexey\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\Alexey\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1507",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "There are 2 package sources defined in your configuration. When using central package management, please map your package sources with package source mapping (https://aka.ms/nuget-package-source-mapping) or specify a single package source. The following sources are defined: nuget.org, PBPackages"
+    }
+  ]
 }
