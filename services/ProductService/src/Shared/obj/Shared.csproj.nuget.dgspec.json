@@ -27,7 +27,8 @@
         ],
         "sources": {
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/PlopyBlopy/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -51,17 +52,17 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "FluentResults": {
-              "target": "Package",
-              "version": "[3.16.0, )",
-              "versionCentrallyManaged": true
-            },
             "FluentValidation": {
               "target": "Package",
               "version": "[11.11.0, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.4, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
               "version": "[9.0.4, )",
               "versionCentrallyManaged": true
@@ -90,7 +91,10 @@
             "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
             "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+            "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
             "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+            "PlopyBlopy.FluentResults.Errors": "1.0.6",
+            "PlopyBlopy.MediatoR.Alternative.Lite": "1.0.16",
             "Scalar.AspNetCore": "2.1.17",
             "Scrutor": "6.0.1",
             "SonarAnalyzer.CSharp": "10.8.0.113526"

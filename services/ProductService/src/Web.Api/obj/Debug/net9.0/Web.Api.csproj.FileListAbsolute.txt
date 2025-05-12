@@ -128,9 +128,7 @@ C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\Web.Api.runtimeconfig.json
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\Web.Api.dll
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\Web.Api.pdb
-C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\FluentResults.dll
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\FluentValidation.dll
-C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\MediatoR.Alternative.Lite.dll
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -254,3 +252,6 @@ C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\FluentResults.dll
+C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\FluentResults.Errors.dll
+C:\repos\llamafly-marketplace\services\ProductService\src\Web.Api\bin\Debug\net9.0\MediatoR.Alternative.Lite.dll

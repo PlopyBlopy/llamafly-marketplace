@@ -6,6 +6,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="PlopyBlopy.FluentResults.Errors" />
+    <PackageReference Include="PlopyBlopy.MediatoR.Alternative.Lite" />
     <PackageReference Include="Scalar.AspNetCore" />
     <PackageReference Include="Scrutor" />
   </ItemGroup>
