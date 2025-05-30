@@ -2,11 +2,13 @@ using Application;
 using Infrastructure;
 using Infrastructure.Database.Extensions;
 using Scalar.AspNetCore;
+using Shared;
 using System.Reflection;
 using Web.Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
+    .AddShared()
     .AddApplication()
     .AddInfrastructure(builder.Configuration);
 

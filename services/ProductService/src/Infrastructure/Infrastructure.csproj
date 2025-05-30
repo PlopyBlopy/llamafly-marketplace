@@ -2,7 +2,7 @@
   <ItemGroup>
     <Folder Include="Database\Interfaces\" />
     <Folder Include="Database\Migrations\" />
-    <Folder Include="Database\Repositories\" />
+    <Folder Include="Database\Repositories\Products\Create\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
