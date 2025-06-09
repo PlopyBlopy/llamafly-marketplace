@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace Web.Api.Infrastructure
+namespace API.Infrastructure
 {
     public static class ResultExtensions
     {

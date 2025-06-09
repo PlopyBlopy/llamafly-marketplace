@@ -1,8 +1,7 @@
-﻿using Application.Products.Create;
-using AutoMapper;
-using Web.Api.Endpoints.Products;
+﻿using AutoMapper;
+using Domain.Commands.Products.Create;
 
-namespace Shared.Mappings.Converters
+namespace Shared.Mapper.Converters
 {
     internal sealed class CreateProductRequestToCommandConverter : ITypeConverter<CreateProductRequest, CreateProductCommand>
     {

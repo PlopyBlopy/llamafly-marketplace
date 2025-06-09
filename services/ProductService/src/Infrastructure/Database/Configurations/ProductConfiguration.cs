@@ -1,13 +1,13 @@
-﻿using Domain.Category;
-using Domain.Product;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Domain.Category;
+using Domain.Product;
 
 namespace Infrastructure.Database.Configurations
 {
-    internal sealed class ProductConfiguration : IEntityTypeConfiguration<Product>
+    internal sealed class ProductConfiguration : IEntityTypeConfiguration<ProductModel>
     {
-        public void Configure(EntityTypeBuilder<Product> builder)
+        public void Configure(EntityTypeBuilder<ProductModel> builder)
         {
             builder.ToTable("products")
                 .HasKey(x => x.Id);
@@ -57,7 +57,7 @@ namespace Infrastructure.Database.Configurations
                 .IsRequired()
                 .HasColumnType("timestamp");
 
-            builder.HasOne<Category>()
+            builder.HasOne<CategoryModel>()
                 .WithMany()
                 .HasForeignKey(x => x.CategoryId)
                 .OnDelete(DeleteBehavior.Restrict)

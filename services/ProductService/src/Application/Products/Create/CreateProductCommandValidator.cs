@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using Application.Products.Create;
+using Domain.Commands.Products.Create;
 
 namespace Application.Products.Create
 {

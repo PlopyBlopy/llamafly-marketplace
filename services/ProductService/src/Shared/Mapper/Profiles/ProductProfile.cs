@@ -1,15 +1,16 @@
-﻿using Application.Products.Create;
-using AutoMapper;
-using Shared.Mappings.Converters;
-using Web.Api.Endpoints.Products;
+﻿using AutoMapper;
+using Domain.Commands.Products.Create;
+using Domain.Product;
+using Shared.Mapper.Converters;
 
-namespace Shared.Mappings.Profiles
+namespace Shared.Mapper.Profiles
 {
     public class ProductProfile : Profile
     {
         public ProductProfile()
         {
             CreateMap<CreateProductRequest, CreateProductCommand>().ConvertUsing<CreateProductRequestToCommandConverter>();
+            CreateMap<CreateProductCommand, ProductModel>().ConvertUsing<CreateProductCommandToModelConverter>();
         }
     }
 }

@@ -1,10 +1,8 @@
 using Application;
 using Infrastructure;
-using Infrastructure.Database.Extensions;
-using Scalar.AspNetCore;
 using Shared;
 using System.Reflection;
-using Web.Api.Extensions;
+using API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
@@ -16,14 +14,17 @@ builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
-app.MapEndpoints();
-
-if (app.Environment.IsDevelopment())
-{
-    app.MapScalarApiReference();
-    app.MapOpenApi();
-    app.ApplyMigrations();
-}
 app.UseHttpsRedirection();
 
-app.Run();
+app.MapEndpoints();
+
+//if (app.Environment.IsDevelopment())
+//{
+//    app.MapScalarApiReference();
+//    app.MapOpenApi();
+//    app.ApplyMigrations();
+//}
+
+app.MapGet("/ping", () => "pong");
+
+await app.RunAsync();

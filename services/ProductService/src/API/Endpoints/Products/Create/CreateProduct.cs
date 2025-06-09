@@ -1,16 +1,17 @@
-﻿using Application.Products.Create;
+﻿using API.Infrastructure;
 using AutoMapper;
+using Domain.Commands.Products.Create;
 using FluentResults;
 using MediatoR.Alternative.Lite;
-using Web.Api.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Web.Api.Endpoints.Products.Create
+namespace API.Endpoints.Products.Create
 {
-    internal sealed class Create : IEndpoint
+    internal sealed class CreateProduct : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost($"{Routes.PRODUCTS}", static async (CreateProductRequest request, ISender sender, IMapper mapper, CancellationToken ct) =>
+            app.MapPost(Routes.PRODUCTS, static async ([FromBody] CreateProductRequest request, ISender sender, IMapper mapper, CancellationToken ct) =>
             {
                 var command = mapper.Map<CreateProductCommand>(request);
 

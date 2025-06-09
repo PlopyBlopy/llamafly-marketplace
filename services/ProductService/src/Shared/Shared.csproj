@@ -7,11 +7,6 @@
     <PackageReference Include="AutoMapper" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Application">
-      <HintPath>..\Application\bin\Debug\net9.0\Application.dll</HintPath>
-    </Reference>
-    <Reference Include="Web.Api">
-      <HintPath>..\Web.Api\bin\Debug\net9.0\Web.Api.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 </Project>

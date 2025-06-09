@@ -1,14 +1,14 @@
-﻿using Application.Abstractions;
-using Domain.Category;
+﻿using Domain.Category;
 using Domain.Product;
 using Microsoft.EntityFrameworkCore;
+using Infrastructure.Database.Abstractions;
 
 namespace Infrastructure.Database.Context
 {
     internal sealed class DataBaseContext : DbContext, IDataBaseContext
     {
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<ProductModel> Products { get; set; }
+        public DbSet<CategoryModel> Categories { get; set; }
 
         public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
         {

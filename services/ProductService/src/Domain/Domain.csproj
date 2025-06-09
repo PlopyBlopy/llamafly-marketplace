@@ -1,13 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 
-  <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.csproj" />
-  </ItemGroup>
+
 
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <PackageReference Include="FluentResults" />
+    <PackageReference Include="PlopyBlopy.MediatoR.Alternative.Lite" />
   </ItemGroup>
 
 </Project>

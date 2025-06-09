@@ -2,12 +2,12 @@
 using Domain.Product;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Abstractions
+namespace Infrastructure.Database.Abstractions
 {
     public interface IDataBaseContext
     {
-        DbSet<Product> Products { get; }
-        DbSet<Category> Categories { get; }
+        DbSet<ProductModel> Products { get; }
+        DbSet<CategoryModel> Categories { get; }
 
         Task<int> SaveChangesAsync(CancellationToken ct = default);
     }

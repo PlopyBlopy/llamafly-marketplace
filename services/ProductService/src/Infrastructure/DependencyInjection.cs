@@ -1,5 +1,7 @@
-﻿using Application.Abstractions;
+﻿using Domain.Interfaces;
+using Infrastructure.Database.Abstractions;
 using Infrastructure.Database.Context;
+using Infrastructure.Database.Repositories.Products.Create;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +13,7 @@ namespace Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDataBaseContext(configuration);
+            services.AddRepositories();
             return services;
         }
 
@@ -20,7 +23,14 @@ namespace Infrastructure
 
             services.AddDbContext<DataBaseContext>(options => options.UseNpgsql(connectionString));
 
-            services.AddScoped<IDataBaseContext>(provider => provider.GetRequiredService<DataBaseContext>());
+            services.AddScoped<IDataBaseContext, DataBaseContext>(provider => provider.GetRequiredService<DataBaseContext>());
+
+            return services;
+        }
+
+        private static IServiceCollection AddRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<ICreateProductRepository, CreateProductRepository>();
 
             return services;
         }

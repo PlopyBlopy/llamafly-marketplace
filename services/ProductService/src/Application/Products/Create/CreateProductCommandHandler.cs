@@ -1,15 +1,30 @@
-﻿using FluentResults;
+﻿using AutoMapper;
+using Domain.Commands.Products.Create;
+using Domain.Interfaces;
+using Domain.Product;
+using FluentResults;
 using MediatoR.Alternative.Lite;
 
 namespace Application.Products.Create
 {
-    internal sealed class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CreateProductResponse>
+    internal sealed class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResponse>
     {
+        private readonly ICreateProductRepository _repository;
+        private readonly IMapper _mapper;
+
+        public CreateProductCommandHandler(ICreateProductRepository repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
+
         public async Task<Result<CreateProductResponse>> Handle(CreateProductCommand request, CancellationToken ct)
         {
-            CreateProductResponse response = new CreateProductResponse(Guid.NewGuid());
+            var model = _mapper.Map<ProductModel>(request);
 
-            return Result.Ok(response);
+            var productId = await _repository.CreateAsync(model);
+
+            return Result.Ok(new CreateProductResponse(productId.Value));
         }
     }
 }

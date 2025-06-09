@@ -1,6 +1,6 @@
 ﻿namespace Domain.Category
 {
-    public class Category
+    public class CategoryModel
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
@@ -8,11 +8,11 @@
         public DateTime UpdatedAt { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public Category()
+        public CategoryModel()
         {
         }
 
-        public Category(Guid id, string title, Guid? parentCategoryId, DateTime updatedAt, DateTime createdAt)
+        public CategoryModel(Guid id, string title, Guid? parentCategoryId, DateTime updatedAt, DateTime createdAt)
         {
             Id = id;
             Title = title;

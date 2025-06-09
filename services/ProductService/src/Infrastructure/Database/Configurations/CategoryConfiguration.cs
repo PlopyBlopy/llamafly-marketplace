@@ -1,12 +1,12 @@
-﻿using Domain.Category;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Domain.Category;
 
 namespace Infrastructure.Database.Configurations
 {
-    internal sealed class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    internal sealed class CategoryConfiguration : IEntityTypeConfiguration<CategoryModel>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        public void Configure(EntityTypeBuilder<CategoryModel> builder)
         {
             builder.ToTable("categories")
                 .HasKey(x => x.Id);
@@ -36,7 +36,7 @@ namespace Infrastructure.Database.Configurations
                 .IsRequired()
                 .HasColumnType("timestamp");
 
-            builder.HasOne<Category>()
+            builder.HasOne<CategoryModel>()
                 .WithMany()
                 .HasForeignKey(x => x.ParentCategoryId)
                 .OnDelete(DeleteBehavior.Restrict)

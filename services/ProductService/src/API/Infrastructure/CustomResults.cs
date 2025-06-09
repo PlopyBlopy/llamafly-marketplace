@@ -1,7 +1,7 @@
 ﻿using FluentResults;
 using FluentResults.Errors;
 
-namespace Web.Api.Infrastructure
+namespace API.Infrastructure
 {
     public static class CustomResults
     {

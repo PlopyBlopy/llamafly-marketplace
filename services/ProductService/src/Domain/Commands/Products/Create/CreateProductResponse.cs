@@ -1,4 +1,4 @@
-﻿namespace Application.Products.Create
+﻿namespace Domain.Commands.Products.Create
 {
     public sealed record CreateProductResponse(Guid ProductId);
 }

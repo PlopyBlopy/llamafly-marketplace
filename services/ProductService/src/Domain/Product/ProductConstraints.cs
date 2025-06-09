@@ -11,7 +11,7 @@
         public const decimal MIN_PRICE = 50;
         public const decimal MAX_PRICE = 10000000;
 
-        public const double MIN_RATING = 0.0;
-        public const double MAX_RATING = 5.0;
+        public const decimal MIN_RATING = 0.0M;
+        public const decimal MAX_RATING = 5.0M;
     }
 }

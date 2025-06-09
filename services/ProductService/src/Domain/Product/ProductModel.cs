@@ -1,6 +1,6 @@
 ﻿namespace Domain.Product
 {
-    public class Product
+    public class ProductModel
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
@@ -12,11 +12,7 @@
         public DateTime UpdatedAt { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public Product()
-        {
-        }
-
-        public Product(Guid id, string title, string description, decimal price, decimal rating, Guid categoryId, Guid sellerId, DateTime updatedAt, DateTime createAt)
+        public ProductModel(Guid id, string title, string description, decimal price, decimal rating, Guid categoryId, Guid sellerId, DateTime updatedAt, DateTime createAt)
         {
             Id = id;
             Title = title;
