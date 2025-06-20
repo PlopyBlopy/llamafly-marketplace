@@ -10,5 +10,7 @@ namespace Infrastructure.Database.Abstractions
         DbSet<CategoryModel> Categories { get; }
 
         Task<int> SaveChangesAsync(CancellationToken ct = default);
+
+        void Detach<TEntity>(TEntity entity) where TEntity : class;
     }
 }

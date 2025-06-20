@@ -1,7 +1,7 @@
 ﻿using Domain.Category;
 using Domain.Product;
-using Microsoft.EntityFrameworkCore;
 using Infrastructure.Database.Abstractions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Database.Context
 {
@@ -24,6 +24,11 @@ namespace Infrastructure.Database.Context
         public async Task<int> SaveChangesAsync(CancellationToken ct = default)
         {
             return await base.SaveChangesAsync(ct);
+        }
+
+        public void Detach<TEntity>(TEntity entity) where TEntity : class
+        {
+            Entry(entity).State = EntityState.Detached;
         }
     }
 }
