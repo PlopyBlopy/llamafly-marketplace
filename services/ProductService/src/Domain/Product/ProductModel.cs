@@ -12,7 +12,7 @@
         public DateTime UpdatedAt { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public ProductModel(Guid id, string title, string description, decimal price, decimal rating, Guid categoryId, Guid sellerId, DateTime updatedAt, DateTime createAt)
+        public ProductModel(Guid id, string title, string description, decimal price, decimal rating, Guid categoryId, Guid sellerId, DateTime updatedAt, DateTime createdAt)
         {
             Id = id;
             Title = title;
@@ -22,7 +22,7 @@
             CategoryId = categoryId;
             SellerId = sellerId;
             UpdatedAt = updatedAt;
-            CreatedAt = createAt;
+            CreatedAt = createdAt;
         }
     }
 }

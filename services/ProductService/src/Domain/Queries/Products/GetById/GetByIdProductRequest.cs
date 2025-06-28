@@ -1,4 +1,4 @@
-﻿namespace Domain.Commands.Products.GetById
+﻿namespace Domain.Queries.Products.GetById
 {
     public sealed record GetByIdProductRequest(Guid Id);
 }

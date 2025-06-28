@@ -4,7 +4,7 @@ using Domain.Product;
 
 namespace Shared.Mapper.Converters
 {
-    internal class CreateProductCommandToModelConverter : ITypeConverter<CreateProductCommand, ProductModel>
+    internal sealed class CreateProductCommandToModelConverter : ITypeConverter<CreateProductCommand, ProductModel>
     {
         public ProductModel Convert(CreateProductCommand source, ProductModel destination, ResolutionContext context)
         {

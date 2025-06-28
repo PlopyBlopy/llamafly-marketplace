@@ -5,7 +5,7 @@ using FluentResults;
 using MediatoR.Alternative.Lite;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Endpoints.Products.Create
+namespace API.Endpoints.Products.Commands
 {
     internal sealed class CreateProduct : IEndpoint
     {
@@ -15,11 +15,11 @@ namespace API.Endpoints.Products.Create
             {
                 var command = mapper.Map<CreateProductCommand>(request);
 
-                Result<CreateProductResponse> result = await sender.Send(command, ct);
+                Result<CreateProductResponse> response = await sender.Send(command, ct);
 
-                return result.Match(
+                return response.Match(
                     (response) => Results.Ok(response),
-                    (errorResult) => CustomResults.Problem(errorResult)
+                    (errorResponse) => CustomResults.Problem(errorResponse)
                 );
             })
             .WithTags(Tags.PRODUCTS);

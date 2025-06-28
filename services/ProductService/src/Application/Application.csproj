@@ -15,10 +15,6 @@
     </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Products\Update\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 

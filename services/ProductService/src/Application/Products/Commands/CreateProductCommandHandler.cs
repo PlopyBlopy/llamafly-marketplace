@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using Domain.Commands.Products.Create;
-using Domain.Interfaces;
+using Domain.Interfaces.Repositories;
 using Domain.Product;
 using FluentResults;
 using MediatoR.Alternative.Lite;
 
-namespace Application.Products.Create
+namespace Application.Products.Commands
 {
     internal sealed class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResponse>
     {
@@ -22,7 +22,7 @@ namespace Application.Products.Create
         {
             var model = _mapper.Map<ProductModel>(request);
 
-            var productId = await _repository.CreateAsync(model);
+            var productId = await _repository.CreateAsync(model, ct);
 
             return Result.Ok(new CreateProductResponse(productId.Value));
         }

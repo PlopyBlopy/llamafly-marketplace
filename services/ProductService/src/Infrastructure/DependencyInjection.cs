@@ -1,7 +1,8 @@
-﻿using Domain.Interfaces;
+﻿using Domain.Interfaces.Repositories;
 using Infrastructure.Database.Abstractions;
 using Infrastructure.Database.Context;
-using Infrastructure.Database.Repositories.Products.Create;
+using Infrastructure.Database.Repositories.Products.Commands;
+using Infrastructure.Database.Repositories.Products.Queries;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +32,11 @@ namespace Infrastructure
         private static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<ICreateProductRepository, CreateProductRepository>();
+            services.AddScoped<IUpdateProductRepository, UpdateProductRepository>();
+            services.AddScoped<IRemoveProductRepository, RemoveProductRepository>();
+
+            services.AddScoped<IGetByIdProductRepository, GetByIdProductRepository>();
+            services.AddScoped<IGetAllProductRepository, GetAllProductRepository>();
 
             return services;
         }
