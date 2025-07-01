@@ -1,12 +1,14 @@
+using API;
+using API.Extensions;
 using Application;
 using Infrastructure;
 using Shared;
 using System.Reflection;
-using API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddShared()
+    .AddAPI()
     .AddApplication()
     .AddInfrastructure(builder.Configuration);
 
