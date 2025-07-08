@@ -19,6 +19,9 @@ services/ProductService/tests/UnitTests/bin
 services/ProductService/tests/UnitTests/obj
 
 #Frontend
+services/Frontend/.favorites.json
+services/Frontend/.vite
+services/Frontend/tsconfig.tsbuildinfo
 # Logs
 logs
 *.log
