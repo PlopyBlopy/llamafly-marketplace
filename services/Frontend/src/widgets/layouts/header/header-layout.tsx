@@ -1,3 +1,7 @@
 export const HeaderLayout = () => {
-  return <></>;
+  return (
+    <>
+      <h1>Header</h1>
+    </>
+  );
 };
