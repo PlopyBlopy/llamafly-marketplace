@@ -1,3 +1,7 @@
 export const FooterLayout = () => {
-  return <></>;
+  return (
+    <>
+      <h1>Footer</h1>
+    </>
+  );
 };
