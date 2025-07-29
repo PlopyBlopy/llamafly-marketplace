@@ -1,0 +1,28 @@
+.container {
+  width: 25em;
+  height: 2em;
+  border-style: solid;
+  border-width: 0.5em;
+  border-radius: 1em;
+  border-color: rgb(0, 174, 255);
+  background-color: rgb(0, 174, 255);
+}
+
+:is(.container, .containerItems) {
+  display: flex;
+  gap: 1em;
+  justify-content: right;
+  align-items: center;
+}
+
+.searchInput {
+  width: 20em;
+  height: 1.5em;
+  font-size: large;
+  border-style: inset;
+  border-width: 0.3em;
+  border-radius: 0.5em;
+  border-color: rgb(0, 174, 255);
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
