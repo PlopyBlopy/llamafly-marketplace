@@ -8,10 +8,12 @@ import { AuthorizationContainer } from "@/widgets/authorization-container";
 export const HeaderLayout = () => {
   return (
     <div className={styles.container}>
-      <LogoRouter />
-      <CategoriesMenu />
-      <SearchHeaderContainer />
-      <AuthorizationContainer />
+      <div className={styles.items}>
+        <LogoRouter />
+        <CategoriesMenu />
+        <SearchHeaderContainer />
+        <AuthorizationContainer />
+      </div>
     </div>
   );
 };

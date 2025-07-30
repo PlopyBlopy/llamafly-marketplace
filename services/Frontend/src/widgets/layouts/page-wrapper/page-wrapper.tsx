@@ -7,23 +7,9 @@ export const PageWrapper = () => {
   return (
     <>
       <div className={styles.base}>
-        <div className={styles.headerContainer}>
-          <div className={styles.headerContent}>
-            <HeaderLayout />
-          </div>
-        </div>
-
-        <div className={styles.mainContainer}>
-          <div className={styles.mainContent}>
-            <MainLayout />
-          </div>
-        </div>
-
-        <div>
-          <div className={styles.footerContent}>
-            <FooterLayout />
-          </div>
-        </div>
+        <HeaderLayout />
+        <MainLayout />
+        <FooterLayout />
       </div>
     </>
   );
