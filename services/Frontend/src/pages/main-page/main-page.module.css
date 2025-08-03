@@ -1,2 +1,15 @@
-.header {
+.container {
+  width: auto;
+  height: auto;
+
+  display: flex;
+  align-items: start;
+  padding: 2em;
+  margin-top: 2em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3%;
+}
+
+.filterContainer {
+  padding-right: 2em;
 }
