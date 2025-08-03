@@ -1,5 +1,6 @@
 import { LoginPage } from "@/pages/login-page";
 import { MainPage } from "@/pages/main-page";
+import { ProductPage } from "@/pages/product-page";
 import { RegistrationPage } from "@/pages/registration-page";
 import { ROUTES } from "@/shared/routing/routes/routes.config";
 import { PageWrapper } from "@/widgets/layouts/page-wrapper";
@@ -21,6 +22,10 @@ export const Router = createBrowserRouter([
       {
         path: ROUTES.REGISTRATION.base,
         element: <RegistrationPage />,
+      },
+      {
+        path: ROUTES.PRODUCT.base,
+        element: <ProductPage />,
       },
     ],
   },

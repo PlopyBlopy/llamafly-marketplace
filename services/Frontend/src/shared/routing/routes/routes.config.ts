@@ -11,4 +11,8 @@ export const ROUTES = {
     path: "/profile/registration",
     base: "/profile/registration",
   },
+  PRODUCT: {
+    path: (title: string, id: string) => `/product/${title}?id=${id}`,
+    base: "/product/:title",
+  },
 };

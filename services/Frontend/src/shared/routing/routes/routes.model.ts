@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "./routes.config";
+import { TransliterRoute } from "@/shared/transliter-route";
 
 export const useAppNavigate = () => {
   const navigate = useNavigate();
@@ -8,5 +9,7 @@ export const useAppNavigate = () => {
     goToMain: () => navigate(ROUTES.MAIN.path),
     goToLogin: () => navigate(ROUTES.LOGIN.path),
     goToRegistration: () => navigate(ROUTES.REGISTRATION.path),
+    goToProduct: (title: string, id: string) => navigate(ROUTES.PRODUCT.path(TransliterRoute(title), id)),
+    customNavigate: navigate,
   };
 };
