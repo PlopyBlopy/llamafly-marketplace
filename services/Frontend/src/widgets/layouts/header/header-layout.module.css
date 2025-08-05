@@ -1,10 +1,12 @@
 .container {
   position: sticky;
   width: auto;
-  padding: 0em 1em 0em 1em;
+  padding: 0em 1em 1em 1em;
   top: 0;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
 }
 
 .items {
