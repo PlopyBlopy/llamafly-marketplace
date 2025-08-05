@@ -8,7 +8,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 export const Router = createBrowserRouter([
   {
-    path: ROUTES.MAIN.base,
+    path: ROUTES.Main.base,
     element: <PageWrapper />,
     children: [
       {
@@ -16,15 +16,15 @@ export const Router = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: ROUTES.LOGIN.base,
+        path: ROUTES.Authorization.Login.base,
         element: <LoginPage />,
       },
       {
-        path: ROUTES.REGISTRATION.base,
+        path: ROUTES.Authorization.Registration.base,
         element: <RegistrationPage />,
       },
       {
-        path: ROUTES.PRODUCT.base,
+        path: ROUTES.Product.base,
         element: <ProductPage />,
       },
     ],

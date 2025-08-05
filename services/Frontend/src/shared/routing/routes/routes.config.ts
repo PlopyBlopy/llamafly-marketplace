@@ -1,17 +1,19 @@
 export const ROUTES = {
-  MAIN: {
+  Main: {
     path: "/",
     base: "/",
   },
-  LOGIN: {
-    path: "/profile/login",
-    base: "/profile/login",
+  Authorization: {
+    Login: {
+      path: "/profile/login",
+      base: "/profile/login",
+    },
+    Registration: {
+      path: "/profile/registration",
+      base: "/profile/registration",
+    },
   },
-  REGISTRATION: {
-    path: "/profile/registration",
-    base: "/profile/registration",
-  },
-  PRODUCT: {
+  Product: {
     path: (title: string, id: string) => `/product/${title}?id=${id}`,
     base: "/product/:title",
   },
