@@ -3,4 +3,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2em;
+}
+
+.inDevText {
+  font-size: x-large;
+  font-weight: bolder;
+}
+.descriptionText {
+  font-size: larger;
+  font-weight: 600;
+  text-decoration: underline;
 }
