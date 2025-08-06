@@ -3,15 +3,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2em;
 }
 
 .inDevText {
   font-size: x-large;
   font-weight: bolder;
+  margin: 1em 0 0 0;
 }
 .descriptionText {
   font-size: larger;
   font-weight: 600;
   text-decoration: underline;
+  margin: 0;
 }
