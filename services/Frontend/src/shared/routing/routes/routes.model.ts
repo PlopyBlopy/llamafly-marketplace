@@ -6,7 +6,7 @@ export const useAppNavigate = () => {
   const navigate = useNavigate();
 
   return {
-    goToMain: () => navigate(ROUTES.MAIN.path),
+    goToMain: () => navigate(ROUTES.Main.path),
     goToLogin: () => navigate(ROUTES.Authorization.Login.path),
     goToRegistration: () => navigate(ROUTES.Authorization.Registration.path),
     goToProduct: (title: string, id: string) => navigate(ROUTES.Product.path(TransliterRoute(title), id)),
