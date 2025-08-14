@@ -1,5 +1,5 @@
 ﻿using Domain.Product;
-using Domain.Queries.Products.GetById;
+using Domain.Queries.Products;
 using FluentResults;
 
 namespace Domain.Interfaces.Repositories

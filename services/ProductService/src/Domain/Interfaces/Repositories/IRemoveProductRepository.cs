@@ -1,4 +1,4 @@
-﻿using Domain.Commands.Products.Remove;
+﻿using Domain.Commands.Products;
 using FluentResults;
 
 namespace Domain.Interfaces.Repositories

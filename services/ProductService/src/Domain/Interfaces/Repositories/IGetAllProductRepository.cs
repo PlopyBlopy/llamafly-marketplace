@@ -1,4 +1,4 @@
-﻿using Domain.Queries.Products.GetAll;
+﻿using Domain.Queries.Products;
 using FluentResults;
 
 namespace Domain.Interfaces.Repositories

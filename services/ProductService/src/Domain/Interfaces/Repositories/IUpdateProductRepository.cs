@@ -1,4 +1,4 @@
-﻿using Domain.Commands.Products.Update;
+﻿using Domain.Commands.Products;
 using Domain.Product;
 using FluentResults;
 
