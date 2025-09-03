@@ -20,4 +20,9 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Endpoints\Queries\Categories\" />
+  </ItemGroup>
 </Project>

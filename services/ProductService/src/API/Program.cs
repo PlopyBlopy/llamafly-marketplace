@@ -2,6 +2,7 @@ using API;
 using API.Extensions;
 using Application;
 using Infrastructure;
+using Scalar.AspNetCore;
 using Shared;
 using System.Reflection;
 
@@ -14,20 +15,29 @@ builder.Services
 
 builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
+builder.Services.AddOpenApi();
+
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+
+    app.MapScalarApiReference(options =>
+    {
+        options
+        .WithTitle("Product Service")
+        .WithTheme(ScalarTheme.Purple)
+        .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient);
+    });
+    //app.ApplyMigrations();
+}
 
 app.UseExceptionHandler();
 
 app.UseHttpsRedirection();
 
 app.MapEndpoints();
-
-//if (app.Environment.IsDevelopment())
-//{
-//    app.MapScalarApiReference();
-//    app.MapOpenApi();
-//    app.ApplyMigrations();
-//}
 
 app.MapGet("/ping", () => "pong");
 
