@@ -1,4 +1,5 @@
 using API;
+using API.Endpoints;
 using API.Extensions;
 using Application;
 using Infrastructure;
@@ -39,6 +40,6 @@ app.UseHttpsRedirection();
 
 app.MapEndpoints();
 
-app.MapGet("/ping", () => "pong");
+app.MapGet(Routes.PING, () => "pong");
 
 await app.RunAsync();
