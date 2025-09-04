@@ -1,12 +1,13 @@
-import styles from "./product-card.module.css";
-import type { Card } from "./product-card.model";
+import styles from "./product-card-container.module.css";
 import { useAppNavigate } from "@/shared/routing/routes";
+import preview from "@/shared/assets/test-preview.jpg";
+import type { ProductCard } from "@/shared/api/services/product-service/product-card";
 
 type Props = {
-  card: Card;
+  card: ProductCard;
 };
 
-export const ProductCard = ({ card }: Props) => {
+export const ProductCardContainer = ({ card }: Props) => {
   const { goToProduct } = useAppNavigate();
   const goToProductPageHandler = () => {
     goToProduct(card.title, card.id);
@@ -14,7 +15,7 @@ export const ProductCard = ({ card }: Props) => {
 
   return (
     <div className={styles.container}>
-      <img className={styles.imgContainer} onClick={goToProductPageHandler} src={card.img} alt="product" />
+      <img className={styles.imgContainer} onClick={goToProductPageHandler} src={card.img == null ? preview : card.img} alt="product" />
       <div className={styles.bodyContainer}>
         <div className={styles.price}>{card.price} ₽</div>
         <header className={styles.title} onClick={goToProductPageHandler}>

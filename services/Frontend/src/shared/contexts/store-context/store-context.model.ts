@@ -1,4 +1,4 @@
-import { RootStore } from "@/entities/root-store";
+import { RootStore } from "@/entities/stores/root-store";
 import { createContext } from "react";
 
 export const StoreContext = createContext<RootStore | null>(null);

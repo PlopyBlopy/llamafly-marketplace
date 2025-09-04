@@ -1,4 +1,4 @@
-import { RootStore } from "@/entities/root-store";
+import { RootStore } from "@/entities/stores/root-store";
 import { StoreContext } from "./store-context.model";
 
 export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
