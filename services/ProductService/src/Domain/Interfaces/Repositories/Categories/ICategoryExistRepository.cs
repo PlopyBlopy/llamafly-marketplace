@@ -1,7 +1,9 @@
-﻿namespace Domain.Interfaces.Repositories.Categories
+﻿using FluentResults;
+
+namespace Domain.Interfaces.Repositories.Categories
 {
     public interface ICategoryExistRepository
     {
-        Task<bool> IsExistAsync(Guid categoryId, CancellationToken ct);
+        Task<Result<bool>> IsExistAsync(Guid categoryId, CancellationToken ct);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Domain.Interfaces.Repositories.Categories;
+using FluentResults;
 using Infrastructure.Database.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +14,7 @@ namespace Infrastructure.Database.Repositories.Queries.Categories
             _context = context;
         }
 
-        public async Task<bool> IsExistAsync(Guid categoryId, CancellationToken ct)
+        public async Task<Result<bool>> IsExistAsync(Guid categoryId, CancellationToken ct)
         {
             if (categoryId == Guid.Empty)
                 return false;

@@ -31,5 +31,8 @@
 
         public const string CREATE_CATEGORY = $"{CATEGORIES}";
         public const string CREATE_CATEGORIES_RANGE = $"{CATEGORIES}/range";
+
+        public const string GET_BY_ID_CATEGORY = $"{CATEGORIES}/{{id}}";
+        public const string CATEGORY_EXIST = $"{CATEGORIES}/exist/{{id}}";
     }
 }
