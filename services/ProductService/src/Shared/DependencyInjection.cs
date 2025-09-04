@@ -1,9 +1,10 @@
-﻿using Domain.Commands.Products.Create;
-using Domain.Commands.Products.Update;
+﻿using Domain.Commands.Categories;
+using Domain.Commands.Products;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.Mapper.Profiles;
-using Shared.Validation.Models;
+using Shared.Validation.Models.Category;
+using Shared.Validation.Models.Products;
 
 namespace Shared
 {
@@ -20,15 +21,19 @@ namespace Shared
         private static IServiceCollection AddMapper(this IServiceCollection services)
         {
             services.AddAutoMapper(
-                typeof(ProductProfile));
+                typeof(ProductProfile),
+                typeof(CategoryProfile));
 
             return services;
         }
 
         private static IServiceCollection AddValidators(this IServiceCollection services)
         {
-            services.AddTransient<IValidator<CreateProductCommand>, CreateProductCommandValidator>();
-            services.AddTransient<IValidator<UpdateProductCommand>, UpdateProductCommandValidator>();
+            services.AddTransient<IValidator<CreateProductCommand>, CreateProductValidator>();
+            services.AddTransient<IValidator<UpdateProductCommand>, UpdateProductValidator>();
+
+            services.AddTransient<IValidator<CreateCategoriesRangeCommand>, CreateCategoriesRangeValidator>();
+            services.AddTransient<IValidator<CreateCategoryCommand>, CreateCategoryValidator>();
 
             return services;
         }
