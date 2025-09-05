@@ -32,7 +32,7 @@ namespace Shared
             services.AddTransient<IValidator<CreateProductCommand>, CreateProductValidator>();
             services.AddTransient<IValidator<UpdateProductCommand>, UpdateProductValidator>();
 
-            services.AddTransient<IValidator<CreateCategoriesRangeCommand>, CreateCategoriesRangeValidator>();
+            //services.AddTransient<IValidator<CreateCategoriesRangeCommand>, CreateCategoriesRangeValidator>();
             services.AddTransient<IValidator<CreateCategoryCommand>, CreateCategoryValidator>();
 
             return services;
