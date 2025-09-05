@@ -17,6 +17,7 @@ namespace Infrastructure.Database.Repositories.Commands.Categories
         public async Task<Result> CreateRangeAsync(CreateCategoriesRangeModelDto modelDto, CancellationToken ct)
         {
             await _context.Categories.AddRangeAsync(modelDto.Categories, ct);
+
             await _context.SaveChangesAsync(ct);
 
             return Result.Ok();
