@@ -7,7 +7,7 @@ namespace Shared.Mapper.Converters.Product
     {
         public CreateProductCommand Convert(CreateProductRequest source, CreateProductCommand destination, ResolutionContext context)
         {
-            return new CreateProductCommand(source.Title, source.Description, source.Price, source.SellerId, source.CategoryId);
+            return new CreateProductCommand(source.Title, source.Description, source.Price, source.ShopId, source.CategoryId);
         }
     }
 }

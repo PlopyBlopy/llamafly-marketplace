@@ -8,7 +8,7 @@ namespace Shared.Mapper.Converters.Product
     {
         public UpdateProductResponse Convert(ProductModel source, UpdateProductResponse destination, ResolutionContext context)
         {
-            return new UpdateProductResponse(source.Id, source.Title, source.Description, source.Price, source.CategoryId, source.SellerId);
+            return new UpdateProductResponse(source.Id, source.Title, source.Description, source.Price, source.CategoryId, source.ShopId);
         }
     }
 }

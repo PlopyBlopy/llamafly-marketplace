@@ -3,6 +3,7 @@ using API.Endpoints;
 using API.Extensions;
 using Application;
 using Infrastructure;
+using Infrastructure.Database.Extensions;
 using Scalar.AspNetCore;
 using Shared;
 using System.Reflection;
@@ -31,7 +32,8 @@ if (app.Environment.IsDevelopment())
         .WithTheme(ScalarTheme.Purple)
         .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient);
     });
-    //app.ApplyMigrations();
+
+    app.ApplyMigrations();
 }
 
 app.UseExceptionHandler();

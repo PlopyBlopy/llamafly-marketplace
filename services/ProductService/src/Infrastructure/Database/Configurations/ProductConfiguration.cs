@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Domain.Category;
+﻿using Domain.Category;
 using Domain.Product;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Database.Configurations
 {
@@ -42,8 +42,8 @@ namespace Infrastructure.Database.Configurations
                 .IsRequired()
                 .HasColumnType("uuid");
 
-            builder.Property(x => x.SellerId)
-                .HasColumnName("seller_id")
+            builder.Property(x => x.ShopId)
+                .HasColumnName("shop_id")
                 .IsRequired()
                 .HasColumnType("uuid");
 
@@ -65,7 +65,7 @@ namespace Infrastructure.Database.Configurations
 
             builder.ToTable(tb =>
             {
-                tb.HasCheckConstraint("CK_Title_Length", $"LENGTH(title) > {ProductConstraints.MIN_TITLE_LENGTH} AND LENGTH(title) < {ProductConstraints.MAX_TITLE_LENGTH}");
+                tb.HasCheckConstraint("CK_Title_Length", $"LENGTH(title) >= {ProductConstraints.MIN_TITLE_LENGTH} AND LENGTH(title) <= {ProductConstraints.MAX_TITLE_LENGTH}");
                 tb.HasCheckConstraint("CK_Description_Length", $"LENGTH(description) > {ProductConstraints.MIN_Description_LENGTH} AND LENGTH(description) < {ProductConstraints.MAX_Description_LENGTH}");
                 tb.HasCheckConstraint("CK_Product_Price_Range", $"price BETWEEN {ProductConstraints.MIN_PRICE} AND {ProductConstraints.MAX_PRICE}");
                 tb.HasCheckConstraint("CK_Product_Rating_Range", $"rating BETWEEN {ProductConstraints.MIN_RATING} AND {ProductConstraints.MAX_RATING}");

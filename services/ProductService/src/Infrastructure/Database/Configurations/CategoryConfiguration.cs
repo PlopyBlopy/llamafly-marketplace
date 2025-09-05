@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain.Category;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Domain.Category;
 
 namespace Infrastructure.Database.Configurations
 {
@@ -44,7 +44,7 @@ namespace Infrastructure.Database.Configurations
 
             builder.ToTable(tb =>
             {
-                tb.HasCheckConstraint("CK_Title_Length", $"LENGTH(title) > {CategoryConstraints.MIN_TITLE_LENGTH} AND LENGTH(title) < {CategoryConstraints.MAX_TITLE_LENGTH}");
+                tb.HasCheckConstraint("CK_Title_Length", $"LENGTH(title) >= {CategoryConstraints.MIN_TITLE_LENGTH} AND LENGTH(title) <= {CategoryConstraints.MAX_TITLE_LENGTH}");
                 tb.HasCheckConstraint("CK_Category_Parent", "parent_category_id != id");
                 tb.HasCheckConstraint("CK_Updated_At_Length", $"created_at <= updated_at");
             });

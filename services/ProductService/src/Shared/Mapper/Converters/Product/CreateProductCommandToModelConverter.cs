@@ -10,7 +10,7 @@ namespace Shared.Mapper.Converters.Product
         {
             DateTime createdDateTime = DateTime.Now;
 
-            return new ProductModel(Guid.NewGuid(), source.Title, source.Description, source.Price, ProductConstraints.MIN_RATING, source.CategoryId, source.SellerId, createdDateTime, createdDateTime);
+            return new ProductModel(Guid.NewGuid(), source.Title, source.Description, source.Price, ProductConstraints.MIN_RATING, source.CategoryId, source.ShopId, createdDateTime, createdDateTime);
         }
     }
 }

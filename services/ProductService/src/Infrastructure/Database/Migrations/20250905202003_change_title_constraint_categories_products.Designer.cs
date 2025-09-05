@@ -3,6 +3,7 @@ using System;
 using Infrastructure.Database.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Database.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20250905202003_change_title_constraint_categories_products")]
+    partial class change_title_constraint_categories_products
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,9 +96,9 @@ namespace Infrastructure.Database.Migrations
                         .HasColumnType("numeric(2, 1)")
                         .HasColumnName("rating");
 
-                    b.Property<Guid>("ShopId")
+                    b.Property<Guid>("SellerId")
                         .HasColumnType("uuid")
-                        .HasColumnName("shop_id");
+                        .HasColumnName("seller_id");
 
                     b.Property<string>("Title")
                         .IsRequired()

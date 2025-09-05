@@ -48,7 +48,7 @@ namespace Infrastructure.Database.Repositories.Queries.Products
 
             if (filters.Rating > 0)
             {
-                query = query.Where(e => e.Rating == (decimal)filters.Rating);
+                query = query.Where(e => e.Rating == filters.Rating);
             }
             else
             {

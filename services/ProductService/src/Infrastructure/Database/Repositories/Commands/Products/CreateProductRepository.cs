@@ -14,7 +14,7 @@ namespace Infrastructure.Database.Repositories.Commands.Products
             _context = context;
         }
 
-        //TODO: nothing validation for categoryId, sellerId !!!
+        //TODO: nothing validation for categoryId, ShopId !!!
         public async Task<Result<Guid>> CreateAsync(ProductModel model, CancellationToken ct)
         {
             await _context.Products.AddAsync(model, ct);
