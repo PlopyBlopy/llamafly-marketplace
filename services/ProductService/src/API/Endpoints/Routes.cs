@@ -34,5 +34,7 @@
 
         public const string GET_BY_ID_CATEGORY = $"{CATEGORIES}/{{id}}";
         public const string CATEGORY_EXIST = $"{CATEGORIES}/exist/{{id}}";
+        public const string GET_ALL_CATEGORIES = $"{CATEGORIES}/all";
+        public const string GET_ALL_CATEGORIES_MIN = $"{CATEGORIES}/all/min";
     }
 }

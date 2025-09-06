@@ -2,6 +2,7 @@
 using Domain.Commands.Products;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.Helpers;
 using Shared.Mapper.Profiles;
 using Shared.Validation.Models.Category;
 using Shared.Validation.Models.Products;
@@ -14,6 +15,8 @@ namespace Shared
         {
             services.AddMapper();
             services.AddValidators();
+
+            services.AddTransient<CategoriesHierarchyFormatter>();
 
             return services;
         }

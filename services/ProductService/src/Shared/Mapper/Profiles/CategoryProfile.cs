@@ -21,6 +21,9 @@ namespace Shared.Mapper.Profiles
             CreateMap<CategoryModel, GetByIdCategoryResponse>().ConvertUsing<CategoryModelToGetByIdResponseConverter>();
             CreateMap<Guid, CategoryExistQuery>().ConstructUsing(src => new CategoryExistQuery(src));
             CreateMap<bool, CategoryExistResponse>().ConstructUsing(src => new CategoryExistResponse(src));
+
+            CreateMap<List<CategoryWithSubDto>, GetAllCategoriesResponse>().ConstructUsing(src => new GetAllCategoriesResponse(src));
+            CreateMap<List<CategoryWithSubMinDto>, GetAllCategoriesMinResponse>().ConstructUsing(src => new GetAllCategoriesMinResponse(src));
         }
     }
 }
