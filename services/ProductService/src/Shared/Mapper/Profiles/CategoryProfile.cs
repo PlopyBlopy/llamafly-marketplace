@@ -11,11 +11,17 @@ namespace Shared.Mapper.Profiles
     {
         public CategoryProfile()
         {
+            // POST
+
             CreateMap<CreateCategoryCommand, CategoryModel>().ConvertUsing<CreateCategoryCommandToModelConverter>();
             CreateMap<Guid, CreateCategoryResponse>().ConstructUsing(src => new CreateCategoryResponse(src));
 
             CreateMap<CreateCategoriesRangeRequest, CreateCategoriesRangeCommand>().ConvertUsing<CreateCategoriesRangeRequestToCommandConverter>();
             CreateMap<CreateCategoriesRangeCommand, CreateCategoriesRangeModelDto>().ConvertUsing<CreateCategoriesRangeCommandToModelDtoConverter>();
+            CreateMap<CreateCategoriesRangeWithIdRequest, CreateCategoriesRangeWithIdCommand>().ConstructUsing(src => new CreateCategoriesRangeWithIdCommand(src.Categories));
+            CreateMap<CreateCategoriesRangeWithIdCommand, CreateCategoriesRangeModelDto>().ConvertUsing<CreateCategoriesRangeWithIdCommandToModelDtoConverter>();
+
+            // GET
 
             CreateMap<Guid, GetByIdCategoryQuery>().ConstructUsing(src => new GetByIdCategoryQuery(src));
             CreateMap<CategoryModel, GetByIdCategoryResponse>().ConvertUsing<CategoryModelToGetByIdResponseConverter>();
@@ -24,6 +30,10 @@ namespace Shared.Mapper.Profiles
 
             CreateMap<List<CategoryWithSubDto>, GetAllCategoriesResponse>().ConstructUsing(src => new GetAllCategoriesResponse(src));
             CreateMap<List<CategoryWithSubMinDto>, GetAllCategoriesMinResponse>().ConstructUsing(src => new GetAllCategoriesMinResponse(src));
+
+            // PATCH
+
+            // DELETE
         }
     }
 }

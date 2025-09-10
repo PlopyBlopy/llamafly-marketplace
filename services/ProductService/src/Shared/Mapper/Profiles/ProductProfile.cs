@@ -15,6 +15,8 @@ namespace Shared.Mapper.Profiles
             CreateMap<CreateProductRequest, CreateProductCommand>().ConvertUsing<CreateProductRequestToCommandConverter>();
             CreateMap<CreateProductCommand, ProductModel>().ConvertUsing<CreateProductCommandToModelConverter>();
             CreateMap<Guid, CreateProductResponse>().ConstructUsing(src => new CreateProductResponse(src));
+            CreateMap<CreateProductsRangeWithIdRequest, CreateProductsRangeWithIdCommand>().ConstructUsing(src => new CreateProductsRangeWithIdCommand(src.Products));
+            CreateMap<CreateProductsRangeWithIdCommand, CreateProductsRangeModelDto>().ConvertUsing<CreateProductsRangeWithIdCommandToModelDtoConverter>();
 
             // PATCH
             CreateMap<UpdateProductRequest, UpdateProductCommand>().ConvertUsing<UpdateProductRequestToCommandConverter>();
@@ -25,11 +27,12 @@ namespace Shared.Mapper.Profiles
             CreateMap<ProductModel, GetByIdProductResponse>().ConvertUsing<ProductModelToGetByIdResponseConverter>();
 
             CreateMap<ProductModel, ProductCardDto>().ConvertUsing<ProductModelToCardDtoConverter>();
+            CreateMap<GetAllProductsCardsRequest, GetAllProductsCardsQuery>().ConstructUsing(src => new GetAllProductsCardsQuery(src.Limit));
             CreateMap<GetAllProductsCardsFilteredRequest, GetAllProductsCardsFilteredQuery>().ConstructUsing(src => new GetAllProductsCardsFilteredQuery(src.Filters));
             CreateMap<List<ProductCardDto>, GetAllProductsCardsResponse>().ConstructUsing(src => new GetAllProductsCardsResponse(src));
             CreateMap<List<ProductCardDto>, GetAllProductsCardsFilteredResponse>().ConstructUsing(src => new GetAllProductsCardsFilteredResponse(src));
 
-            // REMOVE
+            // DELETE
             CreateMap<RemoveProductRequest, RemoveProductCommand>().ConvertUsing<RemoveProductRequestToCommandConverter>();
             CreateMap<Guid, RemoveProductResponse>().ConstructUsing(src => new RemoveProductResponse(src));
         }

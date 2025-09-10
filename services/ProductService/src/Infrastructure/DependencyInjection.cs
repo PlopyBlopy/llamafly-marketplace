@@ -43,6 +43,7 @@ namespace Infrastructure
         private static IServiceCollection AddProductRepositories(this IServiceCollection services)
         {
             services.AddScoped<ICreateProductRepository, CreateProductRepository>();
+            services.AddScoped<ICreateProductsRangeRepository, CreateProductsRangeRepository>();
             services.AddScoped<IUpdateProductRepository, UpdateProductRepository>();
             services.AddScoped<IRemoveProductRepository, RemoveProductRepository>();
 
