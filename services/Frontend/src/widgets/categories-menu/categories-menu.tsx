@@ -1,5 +1,5 @@
 import { ButtonDefault } from "@/shared/button-default";
-import { CategoriesArea } from "@/features/categories-area";
+import { CategoriesDrawer } from "@/features/categories-drawer";
 import { useState } from "react";
 
 export const CategoriesMenu = () => {
@@ -16,7 +16,7 @@ export const CategoriesMenu = () => {
   return (
     <>
       <ButtonDefault onClick={categoriesOpenHandler} text="Категории" />
-      {isOpen ? <CategoriesArea onSelected={selectedHandler} /> : null}
+      {isOpen ? <CategoriesDrawer onSelected={selectedHandler} /> : null}
     </>
   );
 };
