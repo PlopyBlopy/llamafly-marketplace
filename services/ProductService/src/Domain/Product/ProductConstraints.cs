@@ -13,5 +13,17 @@
 
         public const double MIN_RATING = 0.0;
         public const double MAX_RATING = 5.0;
+
+        public enum SORT_PROP
+        {
+            price,
+            rating
+        }
+
+        public enum SORT_ORDER
+        {
+            desc,
+            asc
+        }
     }
 }

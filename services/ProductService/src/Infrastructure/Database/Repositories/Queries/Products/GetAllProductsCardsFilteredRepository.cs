@@ -2,6 +2,7 @@
 using Domain.DTO;
 using Domain.Interfaces.Repositories.Categories;
 using Domain.Interfaces.Repositories.Products;
+using Domain.Product;
 using FluentResults;
 using Infrastructure.Database.Abstractions;
 using Microsoft.EntityFrameworkCore;
@@ -37,22 +38,32 @@ namespace Infrastructure.Database.Repositories.Queries.Products
                 }
             }
 
-            if (filters.Price > 0)
-            {
-                query = query.Where(e => e.Price == filters.Price);
-            }
-            else
-            {
-                query = query.Where(e => e.Price > 0);
-            }
+            ProductConstraints.SORT_PROP sortProp;
+            ProductConstraints.SORT_ORDER sortOrder;
 
-            if (filters.Rating > 0)
+            if (!Enum.TryParse(filters.SortProp, true, out sortProp))
+                sortProp = ProductConstraints.SORT_PROP.rating;
+
+            if (!Enum.TryParse(filters.SortOrder, true, out sortOrder))
+                sortOrder = ProductConstraints.SORT_ORDER.desc;
+
+            switch (sortProp)
             {
-                query = query.Where(e => e.Rating == filters.Rating);
-            }
-            else
-            {
-                query = query.Where(e => e.Rating > 0);
+                case ProductConstraints.SORT_PROP.price:
+                    query = sortOrder == ProductConstraints.SORT_ORDER.asc
+                        ? query.OrderBy(c => c.Price)
+                        : query.OrderByDescending(c => c.Price);
+                    break;
+
+                case ProductConstraints.SORT_PROP.rating:
+                    query = sortOrder == ProductConstraints.SORT_ORDER.asc
+                        ? query.OrderBy(c => c.Rating)
+                        : query.OrderByDescending(c => c.Rating);
+                    break;
+
+                default:
+                    query = query.OrderByDescending(c => c.Rating);
+                    break;
             }
 
             var result = await query.Select(e => _mapper.Map<ProductCardDto>(e)).ToListAsync(ct);

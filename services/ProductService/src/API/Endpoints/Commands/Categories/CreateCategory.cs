@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Endpoints.Commands.Categories
 {
-    public class CreateCategory : IEndpoint
+    internal sealed class CreateCategory : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {

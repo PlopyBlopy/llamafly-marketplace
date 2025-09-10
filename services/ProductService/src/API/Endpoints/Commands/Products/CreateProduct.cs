@@ -11,7 +11,7 @@ namespace API.Endpoints.Commands.Products
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost(Routes.PRODUCTS, static async ([FromBody] CreateProductRequest request, ISender sender, IMapper mapper, CancellationToken ct) =>
+            app.MapPost(Routes.CREATE_PRODUCTS, static async ([FromBody] CreateProductRequest request, ISender sender, IMapper mapper, CancellationToken ct) =>
             {
                 var command = mapper.Map<CreateProductCommand>(request);
 

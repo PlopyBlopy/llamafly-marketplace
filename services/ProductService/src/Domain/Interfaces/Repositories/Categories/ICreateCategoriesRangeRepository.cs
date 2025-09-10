@@ -5,6 +5,6 @@ namespace Domain.Interfaces.Repositories.Categories
 {
     public interface ICreateCategoriesRangeRepository
     {
-        Task<Result> CreateRangeAsync(CreateCategoriesRangeModelDto modelDto, CancellationToken ct);
+        Task<Result> CreateRangeAsync(CreateCategoriesRangeModelDto dto, CancellationToken ct);
     }
 }

@@ -1,4 +1,4 @@
 ﻿namespace Domain.DTO
 {
-    public sealed record ProductCardFiltersDto(string? Search, Guid? CategoryId, decimal? Price, double? Rating);
+    public sealed record ProductCardFiltersDto(string? Search, Guid? CategoryId, string? SortProp, string? SortOrder);
 }
