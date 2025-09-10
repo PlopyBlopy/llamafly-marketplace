@@ -1,8 +1,8 @@
 export type FilterParams = {
   search?: string;
   categoryId?: string;
-  sortProp?: "min" | "max";
-  sortOrder?: "price" | "rating";
+  sortProp?: "rating" | "price";
+  sortOrder?: "desc" | "asc";
 };
 
 export type ProductCard = {

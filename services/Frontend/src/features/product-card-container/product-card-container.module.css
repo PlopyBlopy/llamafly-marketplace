@@ -1,8 +1,11 @@
 .container {
   width: 13vw;
-  height: 50vh;
+  height: auto;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
+  min-width: 200px; /* Минимальная ширина */
+  max-width: 300px; /* Максимальная ширина */
 }
 
 .imgContainer {
@@ -24,6 +27,11 @@
 .title {
   font-size: large;
   cursor: pointer;
+  line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .price {
   font-weight: bold;
