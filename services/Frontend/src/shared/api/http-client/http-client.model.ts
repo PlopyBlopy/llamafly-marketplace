@@ -1,10 +1,20 @@
 export const API = {
   products: {
-    productsCards: () => "/",
-    detail: (productId: string) => `/detail/${productId}`,
+    base: "/products",
+    GET: {
+      detail: (productId: string) => `${API.products.base}/detail/${productId}`,
+    },
+  },
+  productsCards: {
+    base: "/products/cards",
+    GET: {
+      filters: () => `${API.productsCards.base}/filters`,
+    },
   },
   categories: {
     base: "/categories",
-    categories: () => `${API.categories.base}/range`,
+    GET: {
+      categories: () => `${API.categories.base}/all/min`,
+    },
   },
 };
