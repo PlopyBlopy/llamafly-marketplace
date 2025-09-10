@@ -21,6 +21,9 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
+app.UseExceptionHandler();
+app.UseCors();
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -36,10 +39,7 @@ if (app.Environment.IsDevelopment())
     app.ApplyMigrations();
 }
 
-app.UseExceptionHandler();
-
 app.UseHttpsRedirection();
-
 app.MapEndpoints();
 
 app.MapGet(Routes.PING, () => "pong");
