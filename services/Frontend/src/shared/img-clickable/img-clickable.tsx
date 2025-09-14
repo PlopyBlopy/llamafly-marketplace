@@ -2,10 +2,10 @@ import styles from "./img-clickable.module.css";
 
 type Props = {
   src: string;
-  goToPage: () => void;
+  onGoToPage: () => void;
   width?: string;
 };
 
-export const ImgClickable = ({ src, goToPage, width }: Props) => {
-  return <img className={styles.logo} onClick={goToPage} style={{ cursor: "pointer", width }} src={src} alt="LlamaFly" />;
+export const ImgClickable = ({ src, onGoToPage, width }: Props) => {
+  return <img className={styles.logo} onClick={onGoToPage} style={{ cursor: "pointer", width }} src={src} alt="LlamaFly" />;
 };
