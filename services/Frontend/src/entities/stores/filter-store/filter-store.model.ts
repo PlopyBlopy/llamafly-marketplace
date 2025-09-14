@@ -14,7 +14,7 @@ export class FilterStore {
     });
   }
 
-  setFilterParams = (params: FilterParams) => {
-    this.filterParams = params;
+  setFilterParams = (params: FilterParams, defaultFilters: boolean = false) => {
+    this.filterParams = defaultFilters ? defaultFilterParams : params;
   };
 }

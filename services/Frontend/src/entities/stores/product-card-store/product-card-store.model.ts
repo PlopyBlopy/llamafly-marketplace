@@ -1,7 +1,7 @@
 import { getProductsCards, type ProductCard } from "@/shared/api/services/product-service/product-card";
 import type { AxiosInstance } from "axios";
 import { action, makeObservable, observable, runInAction } from "mobx";
-import type { FilterStore } from "../filter-store";
+import { defaultFilterParams, type FilterStore } from "../filter-store";
 
 export class ProductCardStore {
   private readonly api: AxiosInstance;
@@ -19,10 +19,16 @@ export class ProductCardStore {
     });
   }
 
-  loadProductsCards = async () => {
+  loadProductsCards = async (defaultFilters: boolean = false) => {
+    if (defaultFilters) {
+      this.filterStore.setFilterParams(defaultFilterParams);
+    }
+
     const response: ProductCard[] = await getProductsCards(this.api, this.filterStore.filterParams);
     runInAction(() => {
       if (response != null) this.productsCards = response;
     });
   };
+
+  loadProductsCardsNoFilters = async () => {};
 }
