@@ -8,16 +8,14 @@ type Props = {
 };
 
 export const CategoryButton = ({ categoryId, categoryName, onClickEvent }: Props) => {
-  const onClickHandler = () => {
+  const handleClick = () => {
     onClickEvent(categoryId);
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={handleClick}>
       <img className={styles.icon} rel="icon" src={getIconSrc(categoryId)} />
-      <button className={styles.button} onClick={onClickHandler}>
-        {categoryName}
-      </button>
+      <div className={styles.button}>{categoryName}</div>
     </div>
   );
 };
