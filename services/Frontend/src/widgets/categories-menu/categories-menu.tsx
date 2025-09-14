@@ -3,20 +3,20 @@ import { CategoriesDrawer } from "@/features/categories-drawer";
 import { useState } from "react";
 
 export const CategoriesMenu = () => {
-  const [isOpen, SetOpen] = useState<boolean>();
+  const [isOpen, setOpen] = useState<boolean>();
 
-  const categoriesOpenHandler = () => {
-    SetOpen(!isOpen);
+  const handleCategoriesMenuToggle = () => {
+    setOpen((prev) => !prev);
   };
 
-  const selectedHandler = () => {
-    categoriesOpenHandler();
+  const handleCategorySelect = () => {
+    handleCategoriesMenuToggle();
   };
 
   return (
     <>
-      <ButtonDefault onClick={categoriesOpenHandler} text="Категории" />
-      {isOpen ? <CategoriesDrawer onSelected={selectedHandler} /> : null}
+      <ButtonDefault onClick={handleCategoriesMenuToggle} text="Категории" />
+      {isOpen && <CategoriesDrawer onSelected={handleCategorySelect} />}
     </>
   );
 };

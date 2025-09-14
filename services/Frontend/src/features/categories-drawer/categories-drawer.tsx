@@ -42,21 +42,14 @@ export const CategoriesDrawer = observer(({ onSelected }: Props) => {
       <div className={styles.drawerContainer}>
         <div className={styles.leftColumn}>
           {categories?.map((category) => (
-            <div onPointerEnter={(event) => handleCategoryHover(category.id)} key={category.id}>
-              <button
-                onClick={(value) => {
-                  selectedCategoryHandler(category.id);
-                }}
-              >
-                {category.title}
-              </button>
-              {/* <CategoryButton
+            <div onPointerEnter={() => handleCategoryHover(category.id)} key={category.id}>
+              <CategoryButton
                 categoryId={category.id}
                 categoryName={category.title}
                 onClickEvent={(value) => {
                   selectedCategoryHandler(value);
                 }}
-              /> */}
+              />
             </div>
           ))}
         </div>
@@ -66,47 +59,44 @@ export const CategoriesDrawer = observer(({ onSelected }: Props) => {
               {currentCategorySelected.subCategories?.map((subCategory) => (
                 <div key={subCategory.id}>
                   <div>
-                    <button
-                      onClick={(value) => {
-                        selectedCategoryHandler(subCategory.id);
-                      }}
-                    >
-                      {subCategory.title}
-                    </button>
-
-                    {/* <CategoryButton
+                    <CategoryButton
                       categoryId={subCategory.id}
                       categoryName={subCategory.title}
                       onClickEvent={(value) => {
                         selectedCategoryHandler(value);
                       }}
-                    /> */}
+                    />
                   </div>
                   <div className={styles.subList}>
                     {subCategory.subCategories?.map((subSubCategory) => (
                       <div key={subSubCategory.id}>
-                        <button
-                          onClick={(value) => {
-                            selectedCategoryHandler(subSubCategory.id);
-                          }}
-                        >
-                          {subSubCategory.title}
-                        </button>
-
-                        {/* <CategoryButton
+                        <CategoryButton
                           categoryId={subSubCategory.id}
                           categoryName={subSubCategory.title}
                           onClickEvent={(value) => {
                             selectedCategoryHandler(value);
                           }}
-                        /> */}
+                        />
+                        <div className={styles.subList}>
+                          {subSubCategory.subCategories?.map((subSubSubCategory) => (
+                            <div key={subSubSubCategory.id}>
+                              <CategoryButton
+                                categoryId={subSubSubCategory.id}
+                                categoryName={subSubSubCategory.title}
+                                onClickEvent={(value) => {
+                                  selectedCategoryHandler(value);
+                                }}
+                              />
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
-          ) : null}{" "}
+          ) : null}
         </div>
       </div>
     </div>
