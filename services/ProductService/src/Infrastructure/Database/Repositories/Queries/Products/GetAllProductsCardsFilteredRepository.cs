@@ -27,7 +27,7 @@ namespace Infrastructure.Database.Repositories.Queries.Products
             var query = _context.Products.AsNoTracking();
 
             if (!string.IsNullOrEmpty(filters.Search))
-                query = query.Where(e => e.Title.Contains(filters.Search));
+                query = query.Where(e => e.Title.ToLower().Contains(filters.Search.ToLower()));
 
             if (filters.CategoryId != null && filters.CategoryId != Guid.Empty)
             {
