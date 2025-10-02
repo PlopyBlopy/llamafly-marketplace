@@ -11,9 +11,9 @@ namespace API.Endpoints.Queries.Products
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet(Routes.GET_BY_ID_PRODUCTS, static async ([FromBody] GetByIdProductRequest request, ISender sender, IMapper mapper, CancellationToken ct) =>
+            app.MapGet(Routes.GET_BY_ID_PRODUCT, static async ([FromRoute] Guid id, ISender sender, IMapper mapper, CancellationToken ct) =>
             {
-                var query = mapper.Map<GetByIdProductQuery>(request);
+                var query = mapper.Map<GetByIdProductQuery>(id);
 
                 Result<GetByIdProductResponse> response = await sender.Send(query, ct);
 

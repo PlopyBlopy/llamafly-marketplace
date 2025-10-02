@@ -64,6 +64,7 @@ namespace Infrastructure
             services.AddScoped<IGetByIdCategoryRepository, GetByIdCategoryRepository>();
             services.AddScoped<IGetAllCategoriesRepository, GetAllCategoriesRepository>();
             services.AddScoped<IGetAllCategoriesMinRepository, GetAllCategoriesMinRepository>();
+            services.AddScoped<IGetAllSubCategoriesMinRepository, GetAllSubCategoriesMinRepository>();
 
             return services;
         }

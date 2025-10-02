@@ -23,7 +23,7 @@ namespace Shared.Mapper.Profiles
             CreateMap<ProductModel, UpdateProductResponse>().ConvertUsing<ProductModelToUpdateProductResponseConverter>();
 
             // GET
-            CreateMap<GetByIdProductRequest, GetByIdProductQuery>().ConvertUsing<GetByIdProductRequestToQueryConverter>();
+            CreateMap<Guid, GetByIdProductQuery>().ConstructUsing((src) => new GetByIdProductQuery(src));
             CreateMap<ProductModel, GetByIdProductResponse>().ConvertUsing<ProductModelToGetByIdResponseConverter>();
 
             CreateMap<ProductModel, ProductCardDto>().ConvertUsing<ProductModelToCardDtoConverter>();

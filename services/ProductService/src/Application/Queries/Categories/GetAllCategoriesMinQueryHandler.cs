@@ -10,6 +10,7 @@ namespace Application.Queries.Categories
     internal sealed class GetAllCategoriesMinQueryHandler : IQueryHandler<GetAllCategoriesMinQuery, GetAllCategoriesMinResponse>
     {
         private readonly IGetAllCategoriesMinRepository _repository;
+
         private readonly IMapper _mapper;
         private readonly CategoriesHierarchyFormatter _categoriesHierarchyFormatter;
 

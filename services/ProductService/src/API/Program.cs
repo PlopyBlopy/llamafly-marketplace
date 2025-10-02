@@ -45,3 +45,5 @@ app.MapEndpoints();
 app.MapGet(Routes.PING, () => "pong");
 
 await app.RunAsync();
+
+public partial class Program;

@@ -20,13 +20,13 @@ namespace Infrastructure.Database.Repositories.Queries.Categories
             var result = await _context.Categories.FromSqlRaw(
             @"
                 WITH RECURSIVE category_tree AS (
-                    SELECT id, title,parent_category_id, updated_at, created_at
+                    SELECT id, title, parent_category_id
                     FROM categories
                     WHERE parent_category_id IS NULL
 
                     UNION ALL
 
-                    SELECT c.id, c.title, c.parent_category_id, c.updated_at, c.created_at
+                    SELECT c.id, c.title, c.parent_category_id
                     FROM categories c
                     INNER JOIN category_tree ct ON c.parent_category_id = ct.id
                 )

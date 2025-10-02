@@ -12,7 +12,7 @@ namespace Shared.Mapper.Profiles
         public CategoryProfile()
         {
             // POST
-
+            CreateMap<CreateCategoryRequest, CreateCategoryCommand>().ConvertUsing<CreateCategoryRequestToCommandConverter>();
             CreateMap<CreateCategoryCommand, CategoryModel>().ConvertUsing<CreateCategoryCommandToModelConverter>();
             CreateMap<Guid, CreateCategoryResponse>().ConstructUsing(src => new CreateCategoryResponse(src));
 

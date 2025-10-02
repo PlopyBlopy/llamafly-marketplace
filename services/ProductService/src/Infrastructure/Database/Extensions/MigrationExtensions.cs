@@ -16,21 +16,16 @@ namespace Infrastructure.Database.Extensions
                 try
                 {
                     var dbContext = services.GetRequiredService<DataBaseContext>();
-                    dbContext.Database.Migrate(); // Применяет все ожидающие миграции
+                    if (dbContext.Database.CanConnect())
+                        dbContext.Database.Migrate(); // apply migrations
                 }
                 catch (Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<DataBaseContext>>();
                     logger.LogCritical(ex, "FATAL: Database migration failed");
-                    throw; // Останавливаем приложение
+                    throw; // stop app
                 }
             }
         }
     }
 }
-
-//using IServiceScope scope = app.ApplicationServices.CreateScope();
-
-//using DataBaseContext dbContext = scope.ServiceProvider.GetRequiredService<DataBaseContext>();
-
-//dbContext.Database.Migrate();

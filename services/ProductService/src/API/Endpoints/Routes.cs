@@ -13,15 +13,18 @@
 
         public const string PRODUCTS = $"{DEFAULT}/products";
 
-        public const string CREATE_PRODUCTS = $"{PRODUCTS}";
+        public const string CREATE_PRODUCT = $"{PRODUCTS}";
         public const string CREATE_PRODUCTS_RANGE_WITH_ID = $"{PRODUCTS}/range/with_id";
 
         public const string UPDATE_PRODUCT = $"{PRODUCTS}";
         public const string REMOVE_PRODUCT = $"{PRODUCTS}";
 
-        public const string GET_BY_ID_PRODUCTS = $"{PRODUCTS}";
+        public const string GET_BY_ID_PRODUCT = $"{PRODUCTS}/{{id}}";
 
         public const string GET_ALL_PRODUCTS = $"{PRODUCTS}/all";
+
+        public static string GetByIdProduct(Guid id) =>
+            GET_BY_ID_PRODUCT.Replace("{id}", id.ToString());
 
         //default product card endpoint value
 
