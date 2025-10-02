@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<ItemGroup>
+		<PackageReference Include="FluentResults" />
+		<PackageReference Include="PlopyBlopy.MediatoR.Alternative.Lite" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Queries\" />
+	</ItemGroup>
+</Project>

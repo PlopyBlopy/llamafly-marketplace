@@ -1,0 +1,36 @@
+﻿using Infrastructure.Abstractions;
+using Microsoft.EntityFrameworkCore;
+using Domain.Models.AccessToken;
+using Domain.Models.Password;
+using Domain.Models.RefreshToken;
+
+namespace Infrastructure.Database.Context
+{
+    internal sealed class DatabaseContext : DbContext, IDatabaseContext
+    {
+        public DbSet<PasswordModel> Passwords { get; set; }
+        public DbSet<RefreshTokenModel> RefreshTokens { get; set; }
+        public DbSet<AccessTokenModel> AccessTokens { get; set; }
+
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(DatabaseContext).Assembly);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public async Task<int> SaveChangesAsync(CancellationToken ct = default)
+        {
+            return await base.SaveChangesAsync(ct);
+        }
+
+        public void Detach<TEntity>(TEntity entity) where TEntity : class
+        {
+            Entry(entity).State = EntityState.Detached;
+        }
+    }
+}

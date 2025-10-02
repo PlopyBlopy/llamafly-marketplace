@@ -1,0 +1,22 @@
+﻿namespace Infrastructure.HttpServices
+{
+    internal class Routes
+    {
+        //default api endpoint value
+        public const string API_VERSION = "v1";
+
+        public const string DEFAULT = $"api/{API_VERSION}";
+
+        public const string PING = $"{DEFAULT}/ping";
+
+        //default ProfileService
+
+        public const string PROFILE_SERVICE = $"{DEFAULT}";
+
+        public const string PROFILE = $"{PROFILE_SERVICE}/profile";
+
+        public const string CREATE_ADMIN = $"{PROFILE}";
+        public const string CREATE_SELLER = $"{PROFILE}";
+        public const string CREATE_CUSTOMER = $"{PROFILE}";
+    }
+}
