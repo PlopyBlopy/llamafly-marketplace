@@ -13,29 +13,29 @@ services:
   #   networks:
   #     - shared-network
 
-  # auth.db:
-  #   ports:
-  #     - "5431:5432"
-  #   environment:
-  #     POSTGRES_DB: AuthServiceDB
-  #     POSTGRES_USER: ${POSTGRES_DEFAULT_USER}
-  #     POSTGRES_PASSWORD: ${POSTGRES_DEFAULT_PASSWORD}
-  #   networks:
-  #     - shared-network
+  auth.db:
+    ports:
+      - "5430:5432"
+    environment:
+      POSTGRES_DB: AuthServiceDB
+      POSTGRES_USER: ${POSTGRES_DEFAULT_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_DEFAULT_PASSWORD}
+    networks:
+      - shared-network
 
-  # profile.db:
-  #   ports:
-  #     - "5432:5432"
-  #   environment:
-  #     POSTGRES_DB: ProfileServiceDB
-  #     POSTGRES_USER: ${POSTGRES_DEFAULT_USER}
-  #     POSTGRES_PASSWORD: ${POSTGRES_DEFAULT_PASSWORD}
-  #   networks:
-  #     - shared-network
+  profile.db:
+    ports:
+      - "5431:5432"
+    environment:
+      POSTGRES_DB: ProfileServiceDB
+      POSTGRES_USER: ${POSTGRES_DEFAULT_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_DEFAULT_PASSWORD}
+    networks:
+      - shared-network
 
   product.db:
     ports:
-      - "5433:5432"
+      - "5432:5432"
     environment:
       POSTGRES_DB: ProductServiceDB
       POSTGRES_USER: ${POSTGRES_DEFAULT_USER}
