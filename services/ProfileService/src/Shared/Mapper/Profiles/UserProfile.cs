@@ -1,11 +1,15 @@
-﻿namespace Shared.Mapper.Profiles
+﻿using AutoMapper;
+using Domain.DTO;
+using Domain.Models.User;
+using Shared.Mapper.Converters;
+
+namespace Shared.Mapper.Profiles
 {
-    internal class UserProfile : ProfileDtoProfile
+    internal class UserProfile : Profile
     {
         public UserProfile()
         {
-            //CreateMap<UserDto, CreateUserDto>().ConstructUsing(src => new CreateUserDto(src.Login, src.PhoneNumber, src.Email));
-            //CreateMap<(Guid userId, string passwordHash), PasswordModel>().ConstructUsing(src => new PasswordModel(src.userId, src.passwordHash));
+            CreateMap<CreateUserDto, UserModel>().ConvertUsing<CreateUserDtoToModelConverter>();
         }
     }
 }

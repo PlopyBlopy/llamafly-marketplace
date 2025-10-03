@@ -1,28 +1,22 @@
-﻿using Domain.DTO;
-using Domain.Models;
+﻿using Domain.Models;
 using Domain.Models.User;
 using FluentValidation;
 using Shared.Extensions;
-using Shared.Validation.Properties;
 
-namespace Shared.Validation.Models
+namespace Shared.Validation.Properties
 {
-    internal sealed class CreateUserDtoValidator : AbstractValidator<CreateUserDto>
+    internal sealed class LoginPropValidator : AbstractValidator<string>
     {
         private const int minLength = UserModelConstraints.MIN_LOGIN_LENGTH;
         private const int maxLength = UserModelConstraints.MAX_LOGIN_LENGTH;
 
-        public CreateUserDtoValidator()
+        public LoginPropValidator()
         {
-            RuleFor(x => x.Login)
+            RuleFor(login => login)
                 .NotNull().WithMessage(ErrorsMessages.NotNull)
                 .NotEmpty().WithMessage(ErrorsMessages.NotEmpty)
                 .Matches("^[a-zA-Zа-яА-Я]+$").WithMessage(CommonModelErrors.ContainsLetters())
                 .Length(minLength, maxLength).WithMessage(ErrorsMessages.CharactersLength(minLength, maxLength));
-
-            RuleFor(x => x.PhoneNumber).SetValidator(new PhoneNumberPropValidator());
-
-            RuleFor(x => x.Email).SetValidator(new EmailPropValidator());
         }
     }
 }

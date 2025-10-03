@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Shared.Validation.Models
 {
-    internal sealed class CreateAdminDtoValidator : AbstractValidator<CreateAdminDto>
+    internal sealed class CreateAdminDtoValidator : AbstractValidator<CreateAdminModelDto>
     {
         public CreateAdminDtoValidator()
         {

@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using Domain.DTO;
+using Domain.Models.Profile;
+using Shared.Mapper.Converters;
 
 namespace Shared.Mapper.Profiles
 {
@@ -6,7 +9,7 @@ namespace Shared.Mapper.Profiles
     {
         public ProfileDtoProfile()
         {
-            //CreateMap<ProfileDto, CreateProfileDto>().ConvertUsing(src => new CreateProfileDto(src.Name, src.Surname, src.Patronymic, src.Age, src.IsMale));
+            CreateMap<CreateProfileDto, ProfileModel>().ConvertUsing<CreateProfileDtoToModelConverter>();
         }
     }
 }

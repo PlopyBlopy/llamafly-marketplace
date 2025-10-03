@@ -1,4 +1,5 @@
 ﻿using Domain.DTO;
+using Domain.Models;
 using Domain.Models.Profile;
 using FluentValidation;
 using Shared.Extensions;
@@ -20,15 +21,20 @@ namespace Shared.Validation.Models
         {
             RuleFor(x => x.Name)
                 .NotEmpty().WithMessage(ErrorsMessages.NotEmpty)
+                .Matches("^[a-zA-Zа-яА-Я]+$").WithMessage(CommonModelErrors.ContainsLetters())
                 .Length(minNameLength, maxNameLength).WithMessage(ErrorsMessages.CharactersLength(minNameLength, maxNameLength));
 
             RuleFor(x => x.Surname)
                 .NotEmpty().WithMessage(ErrorsMessages.NotEmpty)
+                .Matches("^[a-zA-Zа-яА-Я]+$").WithMessage(CommonModelErrors.ContainsLetters())
                 .Length(minSurnameLength, maxSurnameLength).WithMessage(ErrorsMessages.CharactersLength(minSurnameLength, maxSurnameLength));
 
-            RuleFor(x => x.Patronymic)
-                .NotEmpty().WithMessage(ErrorsMessages.NotEmpty)
+            When(p => !string.IsNullOrEmpty(p.Patronymic), () =>
+            {
+                RuleFor(x => x.Patronymic)
+                .Matches("^[a-zA-Zа-яА-Я]+$").WithMessage(CommonModelErrors.ContainsLetters())
                 .Length(minPatronymicLength, maxPatronymicLength).WithMessage(ErrorsMessages.CharactersLength(minPatronymicLength, maxPatronymicLength));
+            });
 
             RuleFor(x => x.Age)
                 .InclusiveBetween(minAgeValue, maxAgeValue).WithMessage(ErrorsMessages.ValueBetween(minAgeValue, maxAgeValue));
