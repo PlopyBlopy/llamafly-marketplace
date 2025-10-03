@@ -8,20 +8,22 @@ using Domain.Models.Shop;
 using Domain.Models.User;
 using Domain.Models.UserRole;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace Infrastructure.Abstractions
 {
     public interface IDatabaseContext
     {
-        public DbSet<UserModel> Products { get; }
-        public DbSet<ProfileModel> Profiles { get; }
-        public DbSet<RoleModel> Roles { get; }
-        public DbSet<UserRoleModel> UsersRoles { get; }
-        public DbSet<AdminModel> Admins { get; }
-        public DbSet<SellerModel> Sellers { get; }
-        public DbSet<CustomerModel> Customers { get; }
-        public DbSet<ShopModel> Shops { get; }
-        public DbSet<CompanyModel> Companies { get; }
+        DatabaseFacade Database { get; }
+        DbSet<UserModel> Users { get; set; }
+        DbSet<ProfileModel> Profiles { get; set; }
+        DbSet<RoleModel> Roles { get; set; }
+        DbSet<UserRoleModel> UsersRoles { get; set; }
+        DbSet<AdminModel> Admins { get; set; }
+        DbSet<SellerModel> Sellers { get; set; }
+        DbSet<CustomerModel> Customers { get; set; }
+        DbSet<ShopModel> Shops { get; set; }
+        DbSet<CompanyModel> Companies { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken ct = default);
 

@@ -11,6 +11,5 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Helpers\" />
-	  <Folder Include="Mapper\Converters\" />
 	</ItemGroup>
 </Project>

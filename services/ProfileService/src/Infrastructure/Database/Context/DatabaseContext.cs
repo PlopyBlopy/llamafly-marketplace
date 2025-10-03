@@ -14,15 +14,15 @@ namespace Infrastructure.Database.Context
 {
     internal sealed class DatabaseContext : DbContext, IDatabaseContext
     {
-        public DbSet<UserModel> Products { get; }
-        public DbSet<ProfileModel> Profiles { get; }
-        public DbSet<RoleModel> Roles { get; }
-        public DbSet<UserRoleModel> UsersRoles { get; }
-        public DbSet<AdminModel> Admins { get; }
-        public DbSet<SellerModel> Sellers { get; }
-        public DbSet<CustomerModel> Customers { get; }
-        public DbSet<ShopModel> Shops { get; }
-        public DbSet<CompanyModel> Companies { get; }
+        public DbSet<UserModel> Users { get; set; }
+        public DbSet<ProfileModel> Profiles { get; set; }
+        public DbSet<RoleModel> Roles { get; set; }
+        public DbSet<UserRoleModel> UsersRoles { get; set; }
+        public DbSet<AdminModel> Admins { get; set; }
+        public DbSet<SellerModel> Sellers { get; set; }
+        public DbSet<CustomerModel> Customers { get; set; }
+        public DbSet<ShopModel> Shops { get; set; }
+        public DbSet<CompanyModel> Companies { get; set; }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
