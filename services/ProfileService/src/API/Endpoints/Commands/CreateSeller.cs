@@ -7,22 +7,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Endpoints.Commands
 {
-    public class CreateAdmin : IEndpoint
+    public class CreateSeller : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost(Routes.CREATE_ADMIN,
-                async ([FromBody] CreateAdminRequest request,
+            app.MapPost(Routes.CREATE_SELLER,
+                async ([FromBody] CreateSellerRequest request,
                        ISender sender,
                        IMapper mapper,
                        CancellationToken cancellationToken) =>
                 {
-                    var command = mapper.Map<CreateAdminCommand>(request);
+                    var command = mapper.Map<CreateSellerCommand>(request);
 
-                    Result<CreateAdminResponse> result = await sender.Send(command, cancellationToken);
+                    Result<CreateSellerResponse> result = await sender.Send(command, cancellationToken);
 
                     return result.Match(
-                        success => Results.Created(Routes.CREATE_ADMIN, success),
+                        success => Results.Created(Routes.CREATE_SELLER, success),
                         error => CustomResults.Problem(error)
                     );
                 }).WithTags(Tags.PROFILE);

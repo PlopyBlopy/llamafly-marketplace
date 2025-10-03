@@ -8,20 +8,20 @@ using Shared.Mapper;
 
 namespace Application.Commands
 {
-    internal sealed class CreateAdminCommandHandler : ICommandHandler<CreateAdminCommand, CreateAdminResponse>
+    internal sealed class CreateSellerCommandHandler : ICommandHandler<CreateSellerCommand, CreateSellerResponse>
     {
-        private readonly ICreateAdminRepository _repository;
+        private readonly ICreateSellerRepository _repository;
         private readonly IMapper _mapper;
 
-        public CreateAdminCommandHandler(ICreateAdminRepository repository, IMapper mapper)
+        public CreateSellerCommandHandler(ICreateSellerRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<Result<CreateAdminResponse>> Handle(CreateAdminCommand command, CancellationToken ct)
+        public async Task<Result<CreateSellerResponse>> Handle(CreateSellerCommand command, CancellationToken ct)
         {
-            var model = _mapper.Map<CreateAdminModelDto>(command, opts =>
+            var model = _mapper.Map<CreateSellerModelDto>(command, opts =>
             {
                 opts.Items[ContextKeys.UserId] = Guid.NewGuid();
                 opts.Items[ContextKeys.RoleId] = Guid.NewGuid();
@@ -29,7 +29,7 @@ namespace Application.Commands
 
             var result = await _repository.AddAsync(model, ct);
 
-            return result.Map(src => _mapper.Map<CreateAdminResponse>(src));
+            return result.Map(src => _mapper.Map<CreateSellerResponse>(src));
         }
     }
 }
