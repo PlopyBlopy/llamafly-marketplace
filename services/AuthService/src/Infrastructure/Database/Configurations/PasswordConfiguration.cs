@@ -21,11 +21,6 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnType("text")
                 .IsRequired();
 
-            builder.ToTable(t =>
-            {
-                t.HasCheckConstraint("CK_password_length", $"LENGTH(password_hash) >= {PasswordModelConstraints.MIN_LENGTH} AND LENGTH(password_hash) <= {PasswordModelConstraints.MAX_LENGTH}");
-            });
-
             builder.HasIndex(x => x.UserId).IsUnique();
         }
     }
