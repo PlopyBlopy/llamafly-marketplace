@@ -15,8 +15,8 @@
 
         public const string PROFILE = $"{PROFILE_SERVICE}/profile";
 
-        public const string CREATE_ADMIN = $"{PROFILE}";
-        public const string CREATE_SELLER = $"{PROFILE}";
-        public const string CREATE_CUSTOMER = $"{PROFILE}";
+        public const string CREATE_ADMIN = $"{PROFILE}/admin";
+        public const string CREATE_SELLER = $"{PROFILE}/seller";
+        public const string CREATE_CUSTOMER = $"{PROFILE}/customer";
     }
 }

@@ -3,6 +3,7 @@ using Domain.Interfaces.Services;
 using FluentResults;
 using FluentResults.Errors;
 using Infrastructure.Abstractions;
+using Infrastructure.Extensions;
 using System.Net.Http.Json;
 
 namespace Infrastructure.HttpServices
@@ -13,65 +14,27 @@ namespace Infrastructure.HttpServices
         {
         }
 
-        public async Task<Result<CreateAdminResponse>> CreateAdminAsync(CreateAdminRequest request, CancellationToken ct)
+        private async Task<Result<TResponse>> CreateAsync<TRequest, TResponse>(TRequest request, string routes, CancellationToken ct)
         {
-            var response = await HttpClient.PostAsJsonAsync(Routes.CREATE_ADMIN, request);
+            var response = await HttpClient.PostAsJsonAsync(routes, request);
 
             if (!response.IsSuccessStatusCode)
-            {
-                var errorResponse = await response.Content.ReadFromJsonAsync<ErrorResponse>(ct);
+                return await response.HandleValidationErrorsAsync<TResponse>(ct);
 
-                var errors = errorResponse.Reason
-                    .SelectMany(e => e.Reasons)
-                    .Select(r => new ValidationFieldError(r.Message, r.Metadata.ErrorCode, r.Metadata.FieldName, r.Metadata.AttemptedValue))
-                    .ToList();
-
-                return Result.Fail<CreateAdminResponse>(new ValidationError(typeof(CreateAdminResponse).ToString(), errors));
-            }
-
-            var responseContent = await response.Content.ReadFromJsonAsync<CreateAdminResponse>(ct);
+            var responseContent = await response.Content.ReadFromJsonAsync<TResponse>(ct);
 
             return responseContent is null
-                ? Result.Fail<CreateAdminResponse>(new NotNullError(typeof(CreateAdminResponse).ToString()))
+                ? Result.Fail<TResponse>(new NotNullError(typeof(TResponse).ToString()))
                 : Result.Ok(responseContent);
         }
 
-        public Task<Result<CreateCustomerResponse>> CreateCustomerAsync(CreateCustomerRequest request, CancellationToken ct)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Result<CreateAdminResponse>> CreateAdminAsync(CreateAdminRequest request, CancellationToken ct) =>
+            await CreateAsync<CreateAdminRequest, CreateAdminResponse>(request, Routes.CREATE_ADMIN, ct);
 
-        public Task<Result<CreateSellerResponse>> CreateSellerAsync(CreateSellerRequest request, CancellationToken ct)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Result<CreateSellerResponse>> CreateSellerAsync(CreateSellerRequest request, CancellationToken ct) =>
+            await CreateAsync<CreateSellerRequest, CreateSellerResponse>(request, Routes.CREATE_SELLER, ct);
+
+        public async Task<Result<CreateCustomerResponse>> CreateCustomerAsync(CreateCustomerRequest request, CancellationToken ct) =>
+            await CreateAsync<CreateCustomerRequest, CreateCustomerResponse>(request, Routes.CREATE_CUSTOMER, ct);
     }
-
-    public record ErrorResponse(
-        string Type,
-        string Title,
-        int Status,
-        List<ErrorList> Reason,
-        string TraceId);
-
-    public record ErrorList(string Message, ErrorType ErrorType, List<ErrorDetail> Reasons);
-
-    public record ErrorDetail(
-        List<Reason> Reasons,
-        string Message,
-        ErrorMetadata Metadata);
-
-    public record Reason(
-        string Message,
-        ReasonMetadata Metadata);
-
-    public record ReasonMetadata(
-        string ErrorCode,
-        string FieldName,
-        string AttemptedValue);
-
-    public record ErrorMetadata(
-        string ErrorCode,
-        string FieldName,
-        string AttemptedValue);
 }
