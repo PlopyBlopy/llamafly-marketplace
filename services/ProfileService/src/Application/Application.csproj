@@ -18,8 +18,4 @@
 		<InternalsVisibleTo Include="UnitTests" />
 		<InternalsVisibleTo Include="IntegrationTests" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Queries\" />
-	</ItemGroup>
 </Project>
