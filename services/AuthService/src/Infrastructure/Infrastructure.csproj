@@ -24,8 +24,4 @@
 	<ItemGroup>
 		<InternalsVisibleTo Include="IntegrationTests" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Database\Repositories\Queries\" />
-	</ItemGroup>
 </Project>

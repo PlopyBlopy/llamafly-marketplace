@@ -48,9 +48,6 @@ namespace API.Infrastructure
                 if (!result.Errors.Any())
                     return null;
 
-                result.WithError(new Error("some error"));
-                result.Errors[1].Reasons.Add(new Error("error"));
-
                 List<MessageReason> messageReasons = new List<MessageReason>();
                 for (int i = 0; i < result.Errors.Count; i++)
                 {
