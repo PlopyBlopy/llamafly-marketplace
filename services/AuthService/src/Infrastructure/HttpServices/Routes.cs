@@ -1,6 +1,8 @@
-﻿namespace Infrastructure.HttpServices
+﻿using Domain.Queries.Services;
+
+namespace Infrastructure.HttpServices
 {
-    internal class Routes
+    internal static class Routes
     {
         //default api endpoint value
         public const string API_VERSION = "v1";
@@ -18,5 +20,9 @@
         public const string CREATE_ADMIN = $"{PROFILE}/admin";
         public const string CREATE_SELLER = $"{PROFILE}/seller";
         public const string CREATE_CUSTOMER = $"{PROFILE}/customer";
+
+        public const string LOGIN = $"{PROFILE}/user/login";
+
+        public static string LOGIN_QUERY(string loginValue, LoginType loginType) => $"{LOGIN}?loginValue={loginValue}&loginType={Enum.GetName(loginType)}";
     }
 }

@@ -16,5 +16,7 @@
         public const string REGISTER_ADMIN = $"{AUTH}/admin";
         public const string REGISTER_SELLER = $"{AUTH}/seller";
         public const string REGISTER_CUSTOMER = $"{AUTH}/customer";
+
+        public const string LOGIN = $"{AUTH}/user/login";
     }
 }

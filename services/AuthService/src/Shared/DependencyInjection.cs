@@ -22,7 +22,8 @@ namespace Shared
                 typeof(AdminProfile),
                 typeof(SellerProfile),
                 typeof(CustomerProfile),
-                typeof(UserProfile));
+                typeof(UserProfile),
+                typeof(LoginProfile));
 
             return services;
         }
