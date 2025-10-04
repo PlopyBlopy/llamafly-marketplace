@@ -24,7 +24,8 @@ namespace Shared
                 typeof(CustomerProfile),
                 typeof(UserProfile),
                 typeof(ProfileDtoProfile),
-                typeof(RoleProfile));
+                typeof(RoleProfile),
+                typeof(LoginProfile));
 
             return services;
         }
