@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Domain.DTO;
 using Domain.Queries;
+using static Domain.Models.User.UserModelConstraints;
 
 namespace Shared.Mapper.Profiles
 {
@@ -8,9 +9,9 @@ namespace Shared.Mapper.Profiles
     {
         public LoginProfile()
         {
-            CreateMap<(string loginValue, LoginType loginType), LoginQuery>().ConstructUsing(src => new LoginQuery(src.loginValue, src.loginType));
+            CreateMap<(string loginValue, LoginVariants loginType), LoginQuery>().ConstructUsing(src => new LoginQuery(src.loginValue, src.loginType));
             CreateMap<LoginQuery, LoginDto>().ConstructUsing(src => new LoginDto(src.LoginValue, src.LoginType));
-            CreateMap<(bool isVerified, Guid userId), LoginResponse>().ConstructUsing(src => new LoginResponse(src.isVerified, src.userId));
+            CreateMap<(bool isVerified, LoginResultDto dto), LoginResponse>().ConstructUsing(src => new LoginResponse(src.isVerified, src.dto.UserId, src.dto.UserRole));
         }
     }
 }

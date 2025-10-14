@@ -1,8 +1,8 @@
 ﻿using Domain.Queries;
-using Domain.Queries.Services;
 using FluentValidation;
 using Shared.Extensions;
 using Shared.Validation.Properties;
+using static Domain.Models.CommonConstraints;
 
 namespace Shared.Validation.Models
 {
@@ -14,7 +14,7 @@ namespace Shared.Validation.Models
             RuleFor(p => p.LoginType)
                 .NotNull().WithMessage(ErrorsMessages.NotNull)
                 .NotEmpty().WithMessage(ErrorsMessages.NotEmpty)
-                .Equal(LoginType.Login | LoginType.PhoneNumber | LoginType.Email);
+                .Equal(LoginVariants.Login | LoginVariants.PhoneNumber | LoginVariants.Email);
         }
     }
 }

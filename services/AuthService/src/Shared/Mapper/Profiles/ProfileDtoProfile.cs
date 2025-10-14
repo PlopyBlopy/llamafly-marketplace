@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Domain.DTO;
-using Domain.DTO.Services;
 
 namespace Shared.Mapper.Profiles
 {

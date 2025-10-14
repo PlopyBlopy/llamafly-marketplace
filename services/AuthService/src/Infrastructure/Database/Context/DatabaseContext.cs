@@ -1,8 +1,7 @@
-﻿using Infrastructure.Abstractions;
-using Microsoft.EntityFrameworkCore;
-using Domain.Models.AccessToken;
-using Domain.Models.Password;
+﻿using Domain.Models.Password;
 using Domain.Models.RefreshToken;
+using Infrastructure.Abstractions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Database.Context
 {
@@ -10,7 +9,6 @@ namespace Infrastructure.Database.Context
     {
         public DbSet<PasswordModel> Passwords { get; set; }
         public DbSet<RefreshTokenModel> RefreshTokens { get; set; }
-        public DbSet<AccessTokenModel> AccessTokens { get; set; }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {

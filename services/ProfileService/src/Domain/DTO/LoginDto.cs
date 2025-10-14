@@ -1,6 +1,6 @@
-﻿using Domain.Queries;
+﻿using static Domain.Models.User.UserModelConstraints;
 
 namespace Domain.DTO
 {
-    public sealed record LoginDto(string LoginValue, LoginType LoginType);
+    public sealed record LoginDto(string LoginValue, LoginVariants LoginType);
 }

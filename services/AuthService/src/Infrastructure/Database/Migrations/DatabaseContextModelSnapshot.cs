@@ -22,45 +22,6 @@ namespace Infrastructure.Database.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Models.AccessToken.AccessTokenModel", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp")
-                        .HasColumnName("created_at");
-
-                    b.Property<DateTime>("ExpiresAt")
-                        .HasColumnType("timestamp")
-                        .HasColumnName("expires_at");
-
-                    b.Property<bool>("IsRevorked")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_revorked");
-
-                    b.Property<string>("TokenAccess")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("token_access");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("user_id");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Id")
-                        .IsUnique();
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("access_tokens", (string)null);
-                });
-
             modelBuilder.Entity("Domain.Models.Password.PasswordModel", b =>
                 {
                     b.Property<Guid>("UserId")
@@ -88,10 +49,6 @@ namespace Infrastructure.Database.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<Guid>("AccessTokenId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("access_token_id");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp")
                         .HasColumnName("created_at");
@@ -100,9 +57,12 @@ namespace Infrastructure.Database.Migrations
                         .HasColumnType("timestamp")
                         .HasColumnName("expires_at");
 
-                    b.Property<bool>("IsRevorked")
+                    b.Property<bool>("IsRevoked")
                         .HasColumnType("boolean")
-                        .HasColumnName("is_revorked");
+                        .HasColumnName("is_revoked");
+
+                    b.Property<Guid>("TokenAccessId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("TokenRefresh")
                         .IsRequired()
@@ -115,35 +75,16 @@ namespace Infrastructure.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccessTokenId")
-                        .IsUnique();
-
                     b.HasIndex("Id")
                         .IsUnique();
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("refresh_tokens", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Models.AccessToken.AccessTokenModel", b =>
-                {
-                    b.HasOne("Domain.Models.Password.PasswordModel", null)
-                        .WithOne()
-                        .HasForeignKey("Domain.Models.AccessToken.AccessTokenModel", "UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Domain.Models.RefreshToken.RefreshTokenModel", b =>
                 {
-                    b.HasOne("Domain.Models.AccessToken.AccessTokenModel", null)
-                        .WithOne()
-                        .HasForeignKey("Domain.Models.RefreshToken.RefreshTokenModel", "AccessTokenId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Domain.Models.Password.PasswordModel", null)
                         .WithOne()
                         .HasForeignKey("Domain.Models.RefreshToken.RefreshTokenModel", "UserId")

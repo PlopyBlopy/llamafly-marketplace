@@ -11,7 +11,7 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddShared()
-    .AddAPI()
+    .AddAPI(builder.Configuration)
     .AddApplication()
     .AddInfrastructure(builder.Configuration);
 
@@ -40,6 +40,10 @@ app.UseExceptionHandler();
 
 app.UseCors();
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapEndpoints();
 
 app.MapGet(Routes.PING, () => "pong");

@@ -4,7 +4,6 @@ using Domain.Interfaces.Repositories;
 using Domain.Queries;
 using FluentResults;
 using MediatoR.Alternative.Lite;
-using Shared.Extensions;
 
 namespace Application.Queries
 {
@@ -25,11 +24,7 @@ namespace Application.Queries
 
             var result = await _repository.GetAsync(dto, ct);
 
-            return result.Convert(src => new LoginResponse(result.IsSuccess, src));
-
-            //return result.IsSuccess
-            //    ? result.Map(src => new LoginResponse(result.IsSuccess, src))
-            //    : Result.Fail<LoginResponse>(result.Errors);
+            return result.Map(src => _mapper.Map<LoginResponse>((true, src)));
         }
     }
 }

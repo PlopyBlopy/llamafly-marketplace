@@ -1,8 +1,8 @@
-﻿using Domain.Queries.Services;
-using MediatoR.Alternative.Lite;
+﻿using MediatoR.Alternative.Lite;
+using static Domain.Models.CommonConstraints;
 
 namespace Domain.Queries
 {
-    public sealed record LoginUserResponse();
-    public sealed record LoginUserQuery(string LoginValue, LoginType LoginType, string Password) : IQuery<LoginUserResponse>;
+    public sealed record LoginUserResponse(string AccessToken, string RefreshToken, DateTime AccessTokenExpiresAt, DateTime RefreshTokenExpiresAt);
+    public sealed record LoginUserQuery(string LoginValue, LoginVariants LoginType, string Password) : IQuery<LoginUserResponse>;
 }

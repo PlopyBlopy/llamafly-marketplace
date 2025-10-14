@@ -1,4 +1,4 @@
-﻿using Domain.Queries.Services;
+﻿using static Domain.Models.CommonConstraints;
 
 namespace Infrastructure.HttpServices
 {
@@ -11,18 +11,16 @@ namespace Infrastructure.HttpServices
 
         public const string PING = $"{DEFAULT}/ping";
 
-        //default ProfileService
+        //default ProfileGrpcService
 
         public const string PROFILE_SERVICE = $"{DEFAULT}";
 
         public const string PROFILE = $"{PROFILE_SERVICE}/profile";
+        public const string USER = $"{PROFILE_SERVICE}/user";
 
-        public const string CREATE_ADMIN = $"{PROFILE}/admin";
-        public const string CREATE_SELLER = $"{PROFILE}/seller";
-        public const string CREATE_CUSTOMER = $"{PROFILE}/customer";
+        public const string LOGIN = $"{USER}/login";
+        public const string REGISTER_USER = $"{USER}/register";
 
-        public const string LOGIN = $"{PROFILE}/user/login";
-
-        public static string LOGIN_QUERY(string loginValue, LoginType loginType) => $"{LOGIN}?loginValue={loginValue}&loginType={Enum.GetName(loginType)}";
+        public static string LOGIN_QUERY(string loginValue, LoginVariants loginType) => $"{LOGIN}?loginValue={loginValue}&loginType={Enum.GetName(loginType)}";
     }
 }

@@ -1,12 +1,7 @@
-﻿namespace Domain.Queries.Services
-{
-    public sealed record LoginRequest(string LoginValue, LoginType LoginType);
-    public sealed record LoginResponse(bool IsVerified, Guid UserId);
+﻿using static Domain.Models.CommonConstraints;
 
-    public enum LoginType
-    {
-        Login,
-        PhoneNumber,
-        Email
-    }
+namespace Domain.Queries.Services
+{
+    public sealed record LoginRequest(string LoginValue, LoginVariants LoginType);
+    public sealed record LoginResponse(bool IsVerified, Guid UserId, RoleVariants UserRole);
 }

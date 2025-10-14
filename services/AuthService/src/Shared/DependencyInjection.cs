@@ -19,9 +19,6 @@ namespace Shared
         private static IServiceCollection AddMapper(this IServiceCollection services)
         {
             services.AddAutoMapper(
-                typeof(AdminProfile),
-                typeof(SellerProfile),
-                typeof(CustomerProfile),
                 typeof(UserProfile),
                 typeof(LoginProfile));
 
@@ -30,9 +27,7 @@ namespace Shared
 
         private static IServiceCollection AddValidators(this IServiceCollection services)
         {
-            services.AddTransient<IValidator<RegisterAdminCommand>, RegisterAdminValidator>();
-            services.AddTransient<IValidator<RegisterSellerCommand>, RegisterSellerValidator>();
-            services.AddTransient<IValidator<RegisterCustomerCommand>, RegisterCustomerValidator>();
+            services.AddTransient<IValidator<RegisterUserCommand>, RegisterUserValidator>();
 
             return services;
         }

@@ -1,5 +1,4 @@
-﻿using Domain.Models.AccessToken;
-using Domain.Models.Password;
+﻿using Domain.Models.Password;
 using Domain.Models.RefreshToken;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -23,18 +22,13 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnType("uuid")
                 .IsRequired();
 
-            builder.Property(x => x.AccessTokenId)
-                .HasColumnName("access_token_id")
-                .HasColumnType("uuid")
-                .IsRequired();
-
             builder.Property(x => x.TokenRefresh)
                 .HasColumnName("token_refresh")
                 .HasColumnType("text")
                 .IsRequired();
 
-            builder.Property(x => x.IsRevorked)
-                .HasColumnName("is_revorked")
+            builder.Property(x => x.IsRevoked)
+                .HasColumnName("is_revoked")
                 .HasColumnType("boolean")
                 .IsRequired();
 
@@ -54,15 +48,8 @@ namespace Infrastructure.Database.Configurations
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired();
 
-            builder.HasOne<AccessTokenModel>()
-                .WithOne()
-                .HasForeignKey<RefreshTokenModel>(p => p.AccessTokenId)
-                .OnDelete(DeleteBehavior.Restrict)
-                .IsRequired();
-
             builder.HasIndex(x => x.Id).IsUnique();
-            builder.HasIndex(x => x.UserId).IsUnique();
-            builder.HasIndex(x => x.AccessTokenId).IsUnique();
+            builder.HasIndex(x => x.UserId).IsUnique(false);
         }
     }
 }

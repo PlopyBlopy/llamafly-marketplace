@@ -2,7 +2,7 @@
 {
     public static class RoleModelConstraints
     {
-        public enum Roles
+        public enum RoleVariants
         {
             Admin,
             Seller,

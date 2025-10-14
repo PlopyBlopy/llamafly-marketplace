@@ -6,7 +6,7 @@ namespace Shared.Mapper.Profiles
     {
         public UserRoleProfile()
         {
-            //CreateMap<Roles, UserRoleModel>().ConstructUsing((src, context) => new UserRoleModel())
+            //CreateMap<RoleVariants, UserRoleModel>().ConstructUsing((src, context) => new UserRoleModel())
         }
     }
 }

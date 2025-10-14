@@ -5,9 +5,9 @@ using static Domain.Models.Role.RoleModelConstraints;
 
 namespace Shared.Mapper.Converters
 {
-    internal class RoleToRoleModelConverter : ITypeConverter<Roles, RoleModel>
+    internal class RoleToRoleModelConverter : ITypeConverter<RoleVariants, RoleModel>
     {
-        public RoleModel Convert(Roles source, RoleModel destination, ResolutionContext context)
+        public RoleModel Convert(RoleVariants source, RoleModel destination, ResolutionContext context)
         {
             var roleId = context.GetRequiredItem<Guid>(ContextKeys.RoleId);
 

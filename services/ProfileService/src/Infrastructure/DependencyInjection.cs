@@ -1,9 +1,11 @@
-﻿using Infrastructure.Abstractions;
+﻿using Domain.Interfaces.Repositories;
+using Infrastructure.Abstractions;
 using Infrastructure.Database.Context;
 using Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace Infrastructure
 {
@@ -12,7 +14,7 @@ namespace Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDataBaseContext(configuration);
-            services.AddRepositories();
+            services.AddAssemblyTypes<IRepository>(Assembly.GetExecutingAssembly());
             return services;
         }
 

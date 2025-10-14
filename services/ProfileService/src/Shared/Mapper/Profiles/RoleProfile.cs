@@ -9,7 +9,7 @@ namespace Shared.Mapper.Profiles
     {
         public RoleProfile()
         {
-            CreateMap<Roles, RoleModel>().ConvertUsing<RoleToRoleModelConverter>();
+            CreateMap<RoleVariants, RoleModel>().ConvertUsing<RoleToRoleModelConverter>();
         }
     }
 }

@@ -4,6 +4,7 @@ using Domain.Queries;
 using FluentResults;
 using MediatoR.Alternative.Lite;
 using Microsoft.AspNetCore.Mvc;
+using static Domain.Models.User.UserModelConstraints;
 
 namespace API.Endpoints.Queries
 {
@@ -12,7 +13,7 @@ namespace API.Endpoints.Queries
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapGet(Routes.LOGIN,
-                async ([FromQuery] string LoginValue, LoginType LoginType,
+                async ([FromQuery] string LoginValue, LoginVariants LoginType,
                        ISender sender,
                        IMapper mapper,
                        CancellationToken cancellationToken) =>
@@ -25,7 +26,7 @@ namespace API.Endpoints.Queries
                         error => CustomResults.Problem(error)
                     );
                 })
-                .WithTags(Tags.PROFILE);
+                .WithTags(Tags.USER);
         }
     }
 }

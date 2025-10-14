@@ -11,10 +11,10 @@ namespace Domain.Models.Role
         {
         }
 
-        public RoleModel(Guid id, Roles role)
+        public RoleModel(Guid id, RoleVariants role)
         {
             Id = id;
-            Role = Enum.GetName(typeof(Roles), role);
+            Role = Enum.GetName(role);
         }
     }
 }

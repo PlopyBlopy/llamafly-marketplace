@@ -1,5 +1,4 @@
-﻿using Domain.Models.AccessToken;
-using Domain.Models.Password;
+﻿using Domain.Models.Password;
 using Domain.Models.RefreshToken;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -11,7 +10,6 @@ namespace Infrastructure.Abstractions
         DatabaseFacade Database { get; }
         DbSet<PasswordModel> Passwords { get; set; }
         DbSet<RefreshTokenModel> RefreshTokens { get; set; }
-        DbSet<AccessTokenModel> AccessTokens { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken ct = default);
 

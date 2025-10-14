@@ -14,11 +14,13 @@
         public const string PROFILE_SERVICE = $"{DEFAULT}";
 
         public const string PROFILE = $"{PROFILE_SERVICE}/profile";
+        public const string USER = $"{PROFILE_SERVICE}/user";
+
+        public const string LOGIN = $"{USER}/login";
+        public const string REGISTER_USER = $"{USER}/register";
 
         public const string CREATE_ADMIN = $"{PROFILE}/admin";
         public const string CREATE_SELLER = $"{PROFILE}/seller";
         public const string CREATE_CUSTOMER = $"{PROFILE}/customer";
-
-        public const string LOGIN = $"{PROFILE}/user/login";
     }
 }

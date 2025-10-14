@@ -11,12 +11,11 @@
 
         //default product endpoint value
 
-        public const string AUTH = $"{DEFAULT}/auth";
+        public const string AUTH_SERVICE = $"{DEFAULT}";
 
-        public const string REGISTER_ADMIN = $"{AUTH}/admin";
-        public const string REGISTER_SELLER = $"{AUTH}/seller";
-        public const string REGISTER_CUSTOMER = $"{AUTH}/customer";
+        public const string AUTH = $"{AUTH_SERVICE}/auth";
 
-        public const string LOGIN = $"{AUTH}/user/login";
+        public const string LOGIN = $"{AUTH}/login";
+        public const string REGISTER = $"{AUTH}/register";
     }
 }

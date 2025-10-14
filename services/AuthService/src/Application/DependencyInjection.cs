@@ -1,4 +1,5 @@
 ﻿using Application.Extensions;
+using Application.Extensions.JwtToken;
 using Domain.Interfaces;
 using MediatoR.Alternative.Lite;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,6 +26,8 @@ namespace Application
         private static IServiceCollection AddExtensions(this IServiceCollection services)
         {
             services.AddScoped<IPasswordHasher, PasswordHasher>();
+            services.AddScoped<IAccessToken, AccessToken>();
+            services.AddScoped<IRefreshToken, RefreshToken>();
             return services;
         }
     }
