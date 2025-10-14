@@ -1,1 +1,5 @@
-# llamafly-marketplace
+# JuiceLlama-marketplace
+ - Это репозиторий учебного проекта сайта интернет магазина с ориентированием на популярные **OZON**, **Wildberries**, **Yandex Market**
+### У проекта 2 ветки
+- **develop** - ветка для разработки.
+- **main** - для стабильных версий с merge коммитами из ветки develop.
