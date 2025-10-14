@@ -2,6 +2,7 @@
 using Infrastructure.Abstractions;
 using Infrastructure.Database.Context;
 using Infrastructure.Extensions;
+using Infrastructure.gRPCServices;
 using Infrastructure.HttpServices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +18,11 @@ namespace Infrastructure
             services.AddDataBaseContext(configuration);
             services.AddHttpClients(configuration);
             services.AddRepositories();
+            services.AddGrpcService(configuration);
+
+            services.AddScoped<IProfileService, ProfileGrpcService>();
+            services.AddScoped<IProfileGrpcServiceAdapter, ProfileGrpcServiceAdapter>();
+
             return services;
         }
 
@@ -48,13 +54,23 @@ namespace Infrastructure
                 });
             }
 
-            services.AddScoped<IProfileService, ProfileService>();
-
             return services;
         }
 
         private static IServiceCollection AddExtensions(this IServiceCollection services)
         {
+            return services;
+        }
+
+        private static IServiceCollection AddGrpcService(this IServiceCollection services, IConfiguration configuration)
+        {
+            string? connectionString = configuration.GetConnectionString("ProfileService");
+
+            services.AddGrpcClient<ProfileServiceGrpc.ProfileService.ProfileServiceClient>(options =>
+            {
+                options.Address = new Uri(connectionString);
+            });
+
             return services;
         }
     }

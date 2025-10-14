@@ -1,6 +1,7 @@
 using API;
 using API.Endpoints;
 using API.Extensions;
+using API.gRPC;
 using Application;
 using Infrastructure;
 using Infrastructure.Database.Extensions;
@@ -43,6 +44,9 @@ app.UseHttpsRedirection();
 app.MapEndpoints();
 
 app.MapGet(Routes.PING, () => "pong");
+
+//grpc services
+app.MapGrpcService<ProfileGrpcService>();
 
 await app.RunAsync();
 

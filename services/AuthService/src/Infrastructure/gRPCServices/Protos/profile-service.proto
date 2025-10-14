@@ -1,0 +1,138 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";  
+
+option csharp_namespace = "ProfileServiceGrpc";
+
+// rpc Methods
+
+service ProfileService {
+	rpc Login (LoginGrpcRequest) returns (LoginGrpcWithErrorResponse);
+	rpc RegisterUser (RegisterUserGrpcRequest) returns (RegisterUserGrpcWithErrorResponse);
+}
+
+// Requests & Responses
+
+message LoginGrpcRequest{
+    string LoginValue = 1;
+    LoginVariantsGrpc LoginVariant = 2;
+}
+message LoginGrpcResponse{
+    bool IsVerified = 1;
+    string UserId = 2;
+    RoleVariantsGrpc UserRoleVariant = 3;
+}
+message LoginGrpcWithErrorResponse{
+    ErrorResponse ErrorResponse = 1;
+    LoginGrpcResponse Response = 2;
+}
+
+message RegisterUserGrpcRequest{
+    RegisterUserGrpcDto User = 1;
+    RegisterProfileGrpcDto Profile = 2;
+}
+message RegisterUserGrpcResponse{
+    string UserId = 1;
+}
+message RegisterUserGrpcWithErrorResponse{
+    ErrorResponse ErrorResponse = 1;
+    RegisterUserGrpcResponse Response = 2;
+}
+
+// DTO
+message RegisterUserGrpcDto{
+    string Login = 1;
+    google.protobuf.StringValue PhoneNumber = 2;
+    google.protobuf.StringValue Email = 3;
+}
+message RegisterProfileGrpcDto{
+    string Name = 1;
+    string Surname = 2;
+    google.protobuf.StringValue Patronymic = 3; 
+    int32 Age = 4; 
+    bool IsMale = 5;
+}
+
+
+message CreateUserGrpcDto{
+    string Login = 1;
+    string PhoneNumber = 2;
+    string Email = 3;
+}
+message CreateProfileGrpcDto{
+    string Name = 1;
+    string Surname = 2;
+    string Patronymic = 3; 
+    int32 Age = 4; 
+    bool IsMale = 5;
+}
+
+
+// Error DTOs
+
+message ErrorResponse{
+    string Type = 1;
+    string Title = 2;
+    int32 Status = 3;
+    repeated ErrorList Reason = 4;
+    string TraceId = 5;
+}
+message ErrorList{
+    string Message = 1; 
+    ErrorGrpcType ErrorType = 2; 
+    repeated ErrorDetail Reasons = 3;
+}
+message ErrorDetail{
+    repeated Reason Reasons = 1;
+    string Message = 2;
+    ErrorMetadata Metadata = 3;
+}
+message Reason{
+    string Message = 1;
+    ReasonMetadata Metadata = 2;
+}
+message ErrorMetadata{
+    string ErrorCode = 1;
+    string FieldName = 2;
+    string AttemptedValue = 3;
+}
+message ReasonMetadata{
+    string ErrorCode = 1;
+    string FieldName = 2;
+    string AttemptedValue = 3;
+}
+
+// Common types
+
+enum RoleVariantsGrpc
+{
+    Admin = 0;
+    Seller = 1;
+    Customer = 2;
+}
+enum LoginVariantsGrpc
+{
+    Login = 0;
+    PhoneNumber = 1;
+    Email = 2;
+}
+
+enum ErrorGrpcType
+{
+    //
+    // Summary:
+    //     General validation error
+    Validation = 0;
+    //
+    // Summary:
+    //     Field-specific validation error
+    ValidationField = 1;
+    //
+    // Summary:
+    //     Resource not found error
+    NotFound = 2;
+    //
+    // Summary:
+    //     Missing required value error
+    NotNull = 3;
+}

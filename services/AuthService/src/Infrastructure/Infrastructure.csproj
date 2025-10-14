@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<ItemGroup>
+		<PackageReference Include="Grpc.AspNetCore" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design">
@@ -23,5 +24,13 @@
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="IntegrationTests" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Database\Migrations\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="gRPCServices\Protos\profile-service.proto" GrpcServices="Client" />
 	</ItemGroup>
 </Project>

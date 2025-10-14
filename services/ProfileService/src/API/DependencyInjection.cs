@@ -1,4 +1,5 @@
 ﻿using API.Extensions;
+using Infrastructure.gRPCServices;
 
 namespace API
 {
@@ -18,6 +19,16 @@ namespace API
                         .AllowAnyMethod();
                 });
             });
+
+            services.AddgRPCService();
+            services.AddScoped<IProfileGrpcServiceAdapter, ProfileGrpcServiceAdapter>();
+
+            return services;
+        }
+
+        private static IServiceCollection AddgRPCService(this IServiceCollection services)
+        {
+            services.AddGrpc();
 
             return services;
         }
