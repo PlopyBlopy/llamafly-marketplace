@@ -1,0 +1,78 @@
+:root {
+  --font-family-fredoka: "Fredoka", sans-serif;
+  --font-family-nunito: "Nunito", sans-serif;
+
+  /* Базовый размер шрифта (1rem) */
+  --base-font-size: 16px;
+
+  /* Шкала размеров шрифтов (основанная на rem) */
+  --font-size-primary: 1rem;
+  --font-size-secondary: 0.875rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+
+  /* Начертания шрифтов */
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+  --font-weight-900: 900;
+
+  /* Межстрочные интервалы */
+  --line-height-normal: 1.6;
+  --line-height-tight: 1.2;
+
+  /* Цвета текста */
+  --text-color-primary: #212529;
+  --text-color-secondary: #6c757d;
+  --text-color-light: #ffffff;
+  --text-color-grey-light: #e9ecef;
+  --text-color-red: #dc3545;
+  --text-color-accent: #32cd32;
+
+  /* Остальные цвета */
+  --color-light: #ffffff;
+  --color-grey-lighter: #f8f9fa;
+  --color-grey-light: #e9ecef;
+  --color-grey-medium: #dee2e6;
+  --color-grey-dark: #6c757d;
+  --color-grey-darker: #212529;
+
+  --color-accent: #32cd32;
+  --color-accent-lighter: #82e082;
+  --color-accent-light: #28a428;
+  --color-accent-dark: #228b22;
+
+  --color-green: #16cc16;
+  --color-red: #dc3545;
+  --color-blue: #0d6efd;
+  --color-orange: #fd7e14;
+  --color-orange-light: #fcad37;
+  --color-yellow: #ffd700;
+
+  --color-grey-light-20: rgba(233, 236, 239, 0.2);
+  --color-grey-dark-20: rgba(108, 117, 125, 0.2);
+
+  /* Высоты элементов (основанные на rem) */
+  --button-height-normal: 2.5rem; /* 40px на десктопе, 35px на мобильном */
+  --button-height-large: 3rem; /* 48px на десктопе, 42px на мобильном */
+  --button-height-small: 2rem; /* 32px на десктопе, 28px на мобильном */
+
+  /* Размеры иконок (основанные на rem) */
+  --icon-size-normal: 1.25rem; /* 20px / 17.5px */
+  --icon-size-large: 1.5rem; /* 24px / 21px */
+  --icon-size-small: 1rem; /* 16px / 14px */
+
+  --border-radius-normal: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --base-font-size: 14px;
+  }
+}

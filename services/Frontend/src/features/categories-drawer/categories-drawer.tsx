@@ -25,7 +25,7 @@ export const CategoriesDrawer = observer(({ onSelected }: Props) => {
     if (categories != null) setSelectedCategory(categories[0].id);
   }, [categories]);
 
-  const selectedCategoryHandler = (categoryId: string) => {
+  const handleSelectedCategory = (categoryId: string) => {
     onSelected();
     setFilterParams({ categoryId: categoryId });
     loadProductsCards();
@@ -47,7 +47,7 @@ export const CategoriesDrawer = observer(({ onSelected }: Props) => {
                 categoryId={category.id}
                 categoryName={category.title}
                 onClickEvent={(value) => {
-                  selectedCategoryHandler(value);
+                  handleSelectedCategory(value);
                 }}
               />
             </div>
@@ -63,7 +63,7 @@ export const CategoriesDrawer = observer(({ onSelected }: Props) => {
                       categoryId={subCategory.id}
                       categoryName={subCategory.title}
                       onClickEvent={(value) => {
-                        selectedCategoryHandler(value);
+                        handleSelectedCategory(value);
                       }}
                     />
                   </div>
@@ -74,7 +74,7 @@ export const CategoriesDrawer = observer(({ onSelected }: Props) => {
                           categoryId={subSubCategory.id}
                           categoryName={subSubCategory.title}
                           onClickEvent={(value) => {
-                            selectedCategoryHandler(value);
+                            handleSelectedCategory(value);
                           }}
                         />
                         <div className={styles.subList}>
@@ -84,7 +84,7 @@ export const CategoriesDrawer = observer(({ onSelected }: Props) => {
                                 categoryId={subSubSubCategory.id}
                                 categoryName={subSubSubCategory.title}
                                 onClickEvent={(value) => {
-                                  selectedCategoryHandler(value);
+                                  handleSelectedCategory(value);
                                 }}
                               />
                             </div>

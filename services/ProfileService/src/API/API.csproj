@@ -25,8 +25,4 @@
 	<ItemGroup>
 		<Protobuf Include="gRPC\Protos\profile-service.proto" GrpcServices="Server" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="NewFolder\" />
-	</ItemGroup>
 </Project>

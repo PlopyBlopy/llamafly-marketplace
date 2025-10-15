@@ -1,3 +1,4 @@
+import "@/shared/components/variables.css";
 import styles from "./main-layout.module.css";
 
 import { Outlet } from "react-router-dom";

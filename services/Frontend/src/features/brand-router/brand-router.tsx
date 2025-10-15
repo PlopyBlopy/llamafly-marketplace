@@ -1,18 +1,18 @@
 import { useAppNavigate } from "@/shared/routing/routes";
-import logo from "@/shared/assets/logo/LlamaFly-full-ver1-logo.png";
+import logo from "@/shared/assets/brand/brand_name.png";
 import { ImgClickable } from "@/shared/img-clickable";
 import { useStore } from "@/shared/hooks/store-hook";
 
-export const LogoRouter = () => {
+export const BrandRouter = () => {
   const { goToMain } = useAppNavigate();
   const {
     productCardStore: { loadProductsCards },
   } = useStore();
 
-  const goToPageHandler = () => {
+  const handleGoToPage = () => {
     loadProductsCards(true);
     goToMain();
   };
 
-  return <ImgClickable src={logo} onGoToPage={goToPageHandler} />;
+  return <ImgClickable src={logo} onGoToPage={handleGoToPage} />;
 };

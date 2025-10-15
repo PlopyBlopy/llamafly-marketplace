@@ -1,6 +1,7 @@
-import { ButtonDefault } from "@/shared/button-default";
 import { CategoriesDrawer } from "@/features/categories-drawer";
 import { useState } from "react";
+import { PrimaryButtonIcon } from "@/shared/components/primary-button-icon";
+import { Icons } from "@/shared/assets/icons";
 
 export const CategoriesMenu = () => {
   const [isOpen, setOpen] = useState<boolean>();
@@ -15,7 +16,7 @@ export const CategoriesMenu = () => {
 
   return (
     <>
-      <ButtonDefault onClick={handleCategoriesMenuToggle} text="Категории" />
+      <PrimaryButtonIcon onClick={handleCategoriesMenuToggle} text="Категории" IconComponent={Icons.menu.categories} />
       {isOpen && <CategoriesDrawer onSelected={handleCategorySelect} />}
     </>
   );

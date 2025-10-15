@@ -1,0 +1,37 @@
+.button {
+  height: var(--button-height-normal);
+  padding: 0 1rem;
+  background-color: var(--color-accent);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  font-size: var(--font-size-primary);
+  font-weight: var(--font-weight-600);
+  color: var(--text-color-light);
+  line-height: 1; /* Важно! Убираем влияние высоты строки на высоту кнопки */
+
+  border-radius: var(--border-radius-normal);
+  border-width: 0;
+}
+
+.icon {
+  width: var(--icon-size-normal);
+  height: var(--icon-size-normal);
+  flex-shrink: 0; /* Предотвращает сжатие иконки */
+}
+
+.icon path {
+  fill: currentColor; /* наследует цвет от родителя */
+}
+
+.button:hover {
+  background-color: var(--color-accent-light);
+}
+
+.button:active {
+  background-color: var(--color-accent-dark);
+}

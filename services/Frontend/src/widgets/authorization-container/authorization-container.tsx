@@ -1,21 +1,21 @@
-import { ButtonDefault } from "@/shared/button-default";
+import { PrimaryButton } from "@/shared/components/primary-button";
 import { useAppNavigate } from "@/shared/routing/routes";
 
 export const AuthorizationContainer = () => {
   const { goToLogin, goToRegistration } = useAppNavigate();
 
-  const onLogin = () => {
+  const handleLogin = () => {
     goToLogin();
   };
 
-  const onRegister = () => {
+  const handleRegister = () => {
     goToRegistration();
   };
 
   return (
     <>
-      <ButtonDefault text="Login" onClick={onLogin} />
-      <ButtonDefault text="register" onClick={onRegister} />
+      <PrimaryButton onClick={handleLogin} text="Войти" />
+      <PrimaryButton onClick={handleRegister} text="Зарегистрироваться" />
     </>
   );
 };

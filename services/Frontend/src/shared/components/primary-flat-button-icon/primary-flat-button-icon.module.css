@@ -1,0 +1,31 @@
+.button {
+  height: var(--button-height-normal);
+  padding: 0 1rem;
+  background-color: transparent;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  color: var(--color-light);
+
+  border-radius: var(--border-radius-normal);
+  border-width: 0;
+}
+
+.icon {
+  width: var(--icon-size-normal);
+  height: var(--icon-size-normal);
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.button:hover {
+  background-color: var(--color-grey-light-20);
+}
+
+.button:active {
+  background-color: var(--color-grey-dark-20);
+}

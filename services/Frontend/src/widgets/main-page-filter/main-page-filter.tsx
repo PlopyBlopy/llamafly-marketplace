@@ -9,14 +9,14 @@ export const MainPageFilter = () => {
   const [filter, setFilter] = useState<FilterOptions>({ price: "min", rating: "max" });
 
   const selectedOptionHandler = (dropDownId: keyof FilterOptions, value: StringNumber) => {
-    console.log(dropDownId);
     setFilter((prevFilter) => ({ ...prevFilter, [dropDownId]: value }));
   };
   const submitFiltersHandler = () => {
     //TODO: api request
     console.log(filter);
   };
-
+  //TODO: неправильный фильтр,
+  //сделать: Сортировать по <SortProp>, Сортировать по <SortOrder>
   return (
     <div className={styles.container}>
       <h1>Фильтры</h1>
