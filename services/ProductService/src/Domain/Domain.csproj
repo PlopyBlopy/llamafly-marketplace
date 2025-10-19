@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <PackageReference Include="FluentResults" />
+    <PackageReference Include="PlopyBlopy.JuiceLlama.Common" />
     <PackageReference Include="PlopyBlopy.MediatoR.Alternative.Lite" />
   </ItemGroup>
 </Project>

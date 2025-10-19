@@ -11,9 +11,9 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddShared()
-    .AddAPI()
-    .AddApplication()
-    .AddInfrastructure(builder.Configuration);
+    .AddInfrastructure(builder.Configuration)
+    .AddAPI(builder.Configuration)
+    .AddApplication();
 
 builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
@@ -41,6 +41,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapEndpoints();
+
+//app.CacheFrequentlyRequestedData();
 
 app.MapGet(Routes.PING, () => "pong");
 
