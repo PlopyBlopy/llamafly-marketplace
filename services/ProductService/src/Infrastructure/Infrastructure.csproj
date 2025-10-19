@@ -13,14 +13,19 @@
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
     <PackageReference Include="PlopyBlopy.FluentResults.Errors" />
+    <PackageReference Include="PlopyBlopy.JuiceLlama.Common" />
+    <PackageReference Include="Scrutor" />
   </ItemGroup>
     
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
     <ItemGroup>
         <InternalsVisibleTo Include="IntegrationTests" />
+        <InternalsVisibleTo Include="UnitTests" />
+
     </ItemGroup>
 </Project>

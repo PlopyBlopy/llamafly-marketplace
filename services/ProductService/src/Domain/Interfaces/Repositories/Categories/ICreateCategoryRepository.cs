@@ -3,7 +3,7 @@ using FluentResults;
 
 namespace Domain.Interfaces.Repositories.Categories
 {
-    public interface ICreateCategoryRepository
+    public interface ICreateCategoryRepository : IRepository
     {
         Task<Result<Guid>> CreateAsync(CategoryModel model, CancellationToken ct);
     }

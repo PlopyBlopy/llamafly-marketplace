@@ -1,14 +1,14 @@
-﻿using Domain.Interfaces.Repositories.Categories;
-using Domain.Interfaces.Repositories.Products;
+﻿using Domain.Interfaces;
+using Domain.Interfaces.Repositories;
+using Infrastructure.Cache;
 using Infrastructure.Database.Abstractions;
 using Infrastructure.Database.Context;
-using Infrastructure.Database.Repositories.Commands.Categories;
-using Infrastructure.Database.Repositories.Commands.Products;
-using Infrastructure.Database.Repositories.Queries.Categories;
-using Infrastructure.Database.Repositories.Queries.Products;
+using JuiceLlama.Common.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.Decorators.Сaches;
+using System.Reflection;
 
 namespace Infrastructure
 {
@@ -17,7 +17,13 @@ namespace Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDataBaseContext(configuration);
-            services.AddRepositories();
+            services.AddScoped<ICacheService, CacheService>();
+
+            services.AddAssemblyTypes<IRepository>(Assembly.GetExecutingAssembly());
+            services.AddAssemblyDecoratorTypes<ICacheDecorator, IRepository>(typeof(ICacheDecorator).Assembly);
+            //services.AddAssemblyDecoratorTypes<ILoggerDecorator, IRepository>(Assembly.GetExecutingAssembly());
+            //services.AddAssemblyDecoratorTypes<ITracingDecorator, IRepository>(Assembly.GetExecutingAssembly());
+
             return services;
         }
 
@@ -28,43 +34,6 @@ namespace Infrastructure
             services.AddDbContext<DataBaseContext>(options => options.UseNpgsql(connectionString));
 
             services.AddScoped<IDataBaseContext, DataBaseContext>(provider => provider.GetRequiredService<DataBaseContext>());
-
-            return services;
-        }
-
-        private static IServiceCollection AddRepositories(this IServiceCollection services)
-        {
-            AddProductRepositories(services);
-            AddCategoryRepositories(services);
-
-            return services;
-        }
-
-        private static IServiceCollection AddProductRepositories(this IServiceCollection services)
-        {
-            services.AddScoped<ICreateProductRepository, CreateProductRepository>();
-            services.AddScoped<ICreateProductsRangeRepository, CreateProductsRangeRepository>();
-            services.AddScoped<IUpdateProductRepository, UpdateProductRepository>();
-            services.AddScoped<IRemoveProductRepository, RemoveProductRepository>();
-
-            services.AddScoped<IGetByIdProductRepository, GetByIdProductRepository>();
-            services.AddScoped<IGetAllProductRepository, GetAllProductRepository>();
-            services.AddScoped<IGetAllProductsCardsRepository, GetAllProductsCardsRepository>();
-            services.AddScoped<IGetAllProductsCardsFilteredRepository, GetAllProductsCardsFilteredRepository>();
-
-            return services;
-        }
-
-        private static IServiceCollection AddCategoryRepositories(this IServiceCollection services)
-        {
-            services.AddScoped<ICreateCategoryRepository, CreateCategoryRepository>();
-            services.AddScoped<ICreateCategoriesRangeRepository, CreateCategoriesRangeRepository>();
-
-            services.AddScoped<ICategoryExistRepository, CategoryExistRepository>();
-            services.AddScoped<IGetByIdCategoryRepository, GetByIdCategoryRepository>();
-            services.AddScoped<IGetAllCategoriesRepository, GetAllCategoriesRepository>();
-            services.AddScoped<IGetAllCategoriesMinRepository, GetAllCategoriesMinRepository>();
-            services.AddScoped<IGetAllSubCategoriesMinRepository, GetAllSubCategoriesMinRepository>();
 
             return services;
         }
