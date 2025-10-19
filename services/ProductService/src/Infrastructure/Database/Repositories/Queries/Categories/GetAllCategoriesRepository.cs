@@ -3,16 +3,19 @@ using Domain.Interfaces.Repositories.Categories;
 using FluentResults;
 using Infrastructure.Database.Abstractions;
 using Microsoft.EntityFrameworkCore;
+using Shared.Helpers;
 
 namespace Infrastructure.Database.Repositories.Queries.Categories
 {
     internal sealed class GetAllCategoriesRepository : IGetAllCategoriesRepository
     {
         private readonly IDataBaseContext _context;
+        private readonly CategoriesHierarchyFormatter _categoriesHierarchyFormatter;
 
-        public GetAllCategoriesRepository(IDataBaseContext context)
+        public GetAllCategoriesRepository(IDataBaseContext context, CategoriesHierarchyFormatter categoriesHierarchyFormatter)
         {
             _context = context;
+            _categoriesHierarchyFormatter = categoriesHierarchyFormatter;
         }
 
         public async Task<Result<List<CategoryWithSubDto>>> GetAllAsync(CancellationToken ct)
@@ -36,7 +39,9 @@ namespace Infrastructure.Database.Repositories.Queries.Categories
             .Select(c => new CategoryWithSubDto(c.Id, c.Title, c.ParentCategoryId, c.UpdatedAt, c.CreatedAt))
             .ToListAsync(ct);
 
-            return Result.Ok(result);
+            var hierarchyList = _categoriesHierarchyFormatter.Formate(result);
+
+            return Result.Ok(hierarchyList);
         }
     }
 }

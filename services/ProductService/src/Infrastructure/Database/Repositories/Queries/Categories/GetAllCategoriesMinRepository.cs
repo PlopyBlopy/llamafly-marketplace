@@ -3,22 +3,25 @@ using Domain.Interfaces.Repositories.Categories;
 using FluentResults;
 using Infrastructure.Database.Abstractions;
 using Microsoft.EntityFrameworkCore;
+using Shared.Helpers;
 
 namespace Infrastructure.Database.Repositories.Queries.Categories
 {
     internal sealed class GetAllCategoriesMinRepository : IGetAllCategoriesMinRepository
     {
         private readonly IDataBaseContext _context;
+        private readonly CategoriesHierarchyFormatter _categoriesHierarchyFormatter;
 
-        public GetAllCategoriesMinRepository(IDataBaseContext context)
+        public GetAllCategoriesMinRepository(IDataBaseContext context, CategoriesHierarchyFormatter categoriesHierarchyFormatter)
         {
             _context = context;
+            _categoriesHierarchyFormatter = categoriesHierarchyFormatter;
         }
 
         public async Task<Result<List<CategoryWithSubMinDto>>> GetAllMinAsync(CancellationToken ct)
         {
             var result = await _context.Categories.FromSqlRaw(
-            @"
+                @"
                 WITH RECURSIVE category_tree AS (
                     SELECT id, title, parent_category_id
                     FROM categories
@@ -36,7 +39,9 @@ namespace Infrastructure.Database.Repositories.Queries.Categories
             .Select(c => new CategoryWithSubMinDto(c.Id, c.Title, c.ParentCategoryId))
             .ToListAsync(ct);
 
-            return Result.Ok(result);
+            var hierarchyList = _categoriesHierarchyFormatter.Formate(result);
+
+            return Result.Ok(hierarchyList);
         }
     }
 }

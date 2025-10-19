@@ -18,7 +18,7 @@ namespace Infrastructure.Database.Repositories.Queries.Categories
         public async Task<Result<List<CategoryWithSubMinDto>>> GetAllSubMinAsync(Guid rootCategoryId, CancellationToken ct)
         {
             var result = await _context.Categories.FromSqlRaw(
-            @"
+                @"
                     WITH RECURSIVE category_tree AS (
                         SELECT id, title, parent_category_id
                         FROM categories

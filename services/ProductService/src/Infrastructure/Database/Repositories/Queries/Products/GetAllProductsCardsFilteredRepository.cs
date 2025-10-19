@@ -22,29 +22,29 @@ namespace Infrastructure.Database.Repositories.Queries.Products
             _mapper = mapper;
         }
 
-        public async Task<Result<List<ProductCardDto>>> GetAllCardsFilteredAsync(ProductCardFiltersDto filters, CancellationToken ct)
+        public async Task<Result<List<ProductCardDto>>> GetAllCardsFilteredAsync(ProductCardFiltersDto request, CancellationToken ct)
         {
             var query = _context.Products.AsNoTracking();
 
-            if (!string.IsNullOrEmpty(filters.Search))
-                query = query.Where(e => e.Title.ToLower().Contains(filters.Search.ToLower()));
+            if (!string.IsNullOrEmpty(request.Search))
+                query = query.Where(e => e.Title.ToLower().Contains(request.Search.ToLower()));
 
-            if (filters.CategoryId != null && filters.CategoryId != Guid.Empty)
+            if (request.CategoryId != null && request.CategoryId != Guid.Empty)
             {
-                var isExist = await _categoryExistRepository.IsExistAsync(filters.CategoryId.Value, ct);
+                var isExist = await _categoryExistRepository.IsExistAsync(request.CategoryId.Value, ct);
                 if (isExist.Value)
                 {
-                    query = query.Where(e => e.CategoryId == filters.CategoryId);
+                    query = query.Where(e => e.CategoryId == request.CategoryId);
                 }
             }
 
             ProductConstraints.SORT_PROP sortProp;
             ProductConstraints.SORT_ORDER sortOrder;
 
-            if (!Enum.TryParse(filters.SortProp, true, out sortProp))
+            if (!Enum.TryParse(request.SortProp, true, out sortProp))
                 sortProp = ProductConstraints.SORT_PROP.rating;
 
-            if (!Enum.TryParse(filters.SortOrder, true, out sortOrder))
+            if (!Enum.TryParse(request.SortOrder, true, out sortOrder))
                 sortOrder = ProductConstraints.SORT_ORDER.desc;
 
             switch (sortProp)

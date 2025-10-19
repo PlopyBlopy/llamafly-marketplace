@@ -18,13 +18,12 @@ namespace Infrastructure.Database.Repositories.Queries.Products
             _mapper = mapper;
         }
 
+        // TODO: Реализовать limit для GetAllProductRepository
         public async Task<Result<GetAllProductsResponse>> GetAllAsync(CancellationToken ct)
         {
-            var products = await _context.Products.Select(entity => _mapper.Map<GetByIdProductResponse>(entity)).ToListAsync();
+            var products = await _context.Products.ToListAsync(ct);
 
-            var response = new GetAllProductsResponse(products);
-
-            return Result.Ok(response);
+            return Result.Ok(new GetAllProductsResponse(products));
         }
     }
 }

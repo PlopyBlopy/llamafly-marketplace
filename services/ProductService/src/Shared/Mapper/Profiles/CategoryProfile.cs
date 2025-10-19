@@ -18,8 +18,6 @@ namespace Shared.Mapper.Profiles
 
             CreateMap<CreateCategoriesRangeRequest, CreateCategoriesRangeCommand>().ConvertUsing<CreateCategoriesRangeRequestToCommandConverter>();
             CreateMap<CreateCategoriesRangeCommand, CreateCategoriesRangeModelDto>().ConvertUsing<CreateCategoriesRangeCommandToModelDtoConverter>();
-            CreateMap<CreateCategoriesRangeWithIdRequest, CreateCategoriesRangeWithIdCommand>().ConstructUsing(src => new CreateCategoriesRangeWithIdCommand(src.Categories));
-            CreateMap<CreateCategoriesRangeWithIdCommand, CreateCategoriesRangeModelDto>().ConvertUsing<CreateCategoriesRangeWithIdCommandToModelDtoConverter>();
 
             // GET
 

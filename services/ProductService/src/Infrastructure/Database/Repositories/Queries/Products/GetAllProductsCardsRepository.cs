@@ -18,10 +18,10 @@ namespace Infrastructure.Database.Repositories.Queries.Products
             _mapper = mapper;
         }
 
+        // TODO: Реализовать limit для GetAllProductsCardsRepository
         public async Task<Result<List<ProductCardDto>>> GetAllCardsAsync(int? limit, CancellationToken ct)
         {
-            var query = _context.Products
-                .AsNoTracking();
+            var query = _context.Products.AsNoTracking();
 
             if (limit != null && limit != default)
                 query = query.Take(limit.Value);

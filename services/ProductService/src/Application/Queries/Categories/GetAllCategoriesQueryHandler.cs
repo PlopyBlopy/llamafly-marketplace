@@ -22,11 +22,9 @@ namespace Application.Queries.Categories
 
         public async Task<Result<GetAllCategoriesResponse>> Handle(GetAllCategoriesQuery query, CancellationToken ct)
         {
-            var flatListResult = await _repository.GetAllAsync(ct);
+            var hierarchyResult = await _repository.GetAllAsync(ct);
 
-            var hierarchyList = _categoriesHierarchyFormatter.Formate(flatListResult.Value);
-
-            return Result.Ok(_mapper.Map<GetAllCategoriesResponse>(hierarchyList));
+            return Result.Ok(_mapper.Map<GetAllCategoriesResponse>(hierarchyResult.Value));
         }
     }
 }

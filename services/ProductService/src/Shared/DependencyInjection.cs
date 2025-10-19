@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Shared.Helpers;
 using Shared.Mapper.Profiles;
 using Shared.Validation.Models.Category;
-using Shared.Validation.Models.Products;
+using Shared.Validation.Models.Product;
 
 namespace Shared
 {

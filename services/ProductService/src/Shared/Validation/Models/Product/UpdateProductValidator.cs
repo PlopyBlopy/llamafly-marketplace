@@ -2,7 +2,7 @@
 using FluentValidation;
 using Shared.Validation.Properties.Product;
 
-namespace Shared.Validation.Models.Products
+namespace Shared.Validation.Models.Product
 {
     internal sealed class UpdateProductValidator : AbstractValidator<UpdateProductCommand>
     {

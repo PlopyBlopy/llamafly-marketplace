@@ -15,8 +15,6 @@ namespace Shared.Mapper.Profiles
             CreateMap<CreateProductRequest, CreateProductCommand>().ConvertUsing<CreateProductRequestToCommandConverter>();
             CreateMap<CreateProductCommand, ProductModel>().ConvertUsing<CreateProductCommandToModelConverter>();
             CreateMap<Guid, CreateProductResponse>().ConstructUsing(src => new CreateProductResponse(src));
-            CreateMap<CreateProductsRangeWithIdRequest, CreateProductsRangeWithIdCommand>().ConstructUsing(src => new CreateProductsRangeWithIdCommand(src.Products));
-            CreateMap<CreateProductsRangeWithIdCommand, CreateProductsRangeModelDto>().ConvertUsing<CreateProductsRangeWithIdCommandToModelDtoConverter>();
 
             // PATCH
             CreateMap<UpdateProductRequest, UpdateProductCommand>().ConvertUsing<UpdateProductRequestToCommandConverter>();

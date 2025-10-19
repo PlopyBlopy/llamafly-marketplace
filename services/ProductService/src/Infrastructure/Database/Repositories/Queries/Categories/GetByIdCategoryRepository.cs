@@ -21,9 +21,11 @@ namespace Infrastructure.Database.Repositories.Queries.Categories
             CategoryModel model = null;
 
             if (categoryId != Guid.Empty)
+            {
                 model = await _context.Categories
-                    .AsNoTracking()
-                    .FirstOrDefaultAsync(e => e.Id == categoryId, ct);
+                        .AsNoTracking()
+                        .FirstOrDefaultAsync(e => e.Id == categoryId, ct);
+            }
 
             return model is null
                 ? Result.Fail<CategoryModel>(new NotFoundError(categoryId.ToString(), "Category"))

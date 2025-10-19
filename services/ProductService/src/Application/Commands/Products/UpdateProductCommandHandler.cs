@@ -17,9 +17,9 @@ namespace Application.Commands.Products
             _mapper = mapper;
         }
 
-        public async Task<Result<UpdateProductResponse>> Handle(UpdateProductCommand query, CancellationToken ct)
+        public async Task<Result<UpdateProductResponse>> Handle(UpdateProductCommand command, CancellationToken ct)
         {
-            var result = await _repository.UpdateAsync(query, ct);
+            var result = await _repository.UpdateAsync(command, ct);
 
             return result.Map(src => _mapper.Map<UpdateProductResponse>(src));
         }

@@ -1,7 +1,9 @@
-﻿using MediatoR.Alternative.Lite;
+﻿using Domain.Product;
+using MediatoR.Alternative.Lite;
 
 namespace Domain.Queries.Products
 {
-    public record GetAllProductsQuery() : IQuery<GetAllProductsResponse>;
-    public record GetAllProductsResponse(List<GetByIdProductResponse> Products);
+    public sealed record GetAllProductsRequest(int? Limit);
+    public record GetAllProductsResponse(List<ProductModel> Products);
+    public sealed record GetAllProductsQuery(int? Limit) : IQuery<GetAllProductsResponse>;
 }

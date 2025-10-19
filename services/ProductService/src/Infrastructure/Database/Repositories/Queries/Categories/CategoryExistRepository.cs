@@ -23,7 +23,7 @@ namespace Infrastructure.Database.Repositories.Queries.Categories
                 .AsNoTracking()
                 .FirstAsync(ct);
 
-            return result is null ? false : true;
+            return result is not null ? true : false;
         }
     }
 }
