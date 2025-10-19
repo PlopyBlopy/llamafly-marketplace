@@ -43,11 +43,11 @@ services:
     networks:
       - shared-network
 
-  # product.redis:
-  #   ports:
-  #     - "6379:6379"
-  #   networks:
-  #     - shared-network
+  product.redis:
+    ports:
+      - "6379:6379"
+    networks:
+      - shared-network
 
   # image.redis:
   #   ports:
