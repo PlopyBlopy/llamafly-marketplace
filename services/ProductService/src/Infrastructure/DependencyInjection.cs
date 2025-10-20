@@ -21,8 +21,6 @@ namespace Infrastructure
 
             services.AddAssemblyTypes<IRepository>(Assembly.GetExecutingAssembly());
             services.AddAssemblyDecoratorTypes<ICacheDecorator, IRepository>(typeof(ICacheDecorator).Assembly);
-            //services.AddAssemblyDecoratorTypes<ILoggerDecorator, IRepository>(Assembly.GetExecutingAssembly());
-            //services.AddAssemblyDecoratorTypes<ITracingDecorator, IRepository>(Assembly.GetExecutingAssembly());
 
             return services;
         }

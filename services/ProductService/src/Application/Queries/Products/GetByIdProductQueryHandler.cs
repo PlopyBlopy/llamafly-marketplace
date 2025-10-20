@@ -19,7 +19,7 @@ namespace Application.Queries.Products
 
         public async Task<Result<GetByIdProductResponse>> Handle(GetByIdProductQuery request, CancellationToken ct)
         {
-            var result = await _repository.GetByIdAsync(request, ct);
+            var result = await _repository.GetByIdAsync(request.Id, ct);
 
             return result.Map(src => _mapper.Map<GetByIdProductResponse>(src));
         }
