@@ -1,7 +1,7 @@
 ﻿using Domain.Interfaces.Repositories;
 using Infrastructure.Abstractions;
 using Infrastructure.Database.Context;
-using Infrastructure.Extensions;
+using JuiceLlama.Common.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
