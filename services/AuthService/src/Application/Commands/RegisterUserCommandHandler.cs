@@ -41,7 +41,7 @@ namespace Application.Commands
             var passwordModel = _mapper.Map<PasswordModel>((userId: userId, passwordHash: passwordHash));
             var result = await _repository.AddAsync(passwordModel, ct);
 
-            return Result.Ok();
+            return Result.Ok(_mapper.Map<RegisterUserResponse>(userId));
         }
     }
 }

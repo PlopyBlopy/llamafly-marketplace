@@ -1,13 +1,15 @@
-﻿using Domain.Interfaces.Services;
+﻿using Domain.Interfaces.Repositories;
+using Domain.Interfaces.Services;
 using Infrastructure.Abstractions;
 using Infrastructure.Database.Context;
-using Infrastructure.Extensions;
 using Infrastructure.gRPCServices;
 using Infrastructure.HttpServices;
+using JuiceLlama.Common.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http.Headers;
+using System.Reflection;
 
 namespace Infrastructure
 {
@@ -17,9 +19,9 @@ namespace Infrastructure
         {
             services.AddDataBaseContext(configuration);
             services.AddHttpClients(configuration);
-            services.AddRepositories();
             services.AddGrpcService(configuration);
 
+            services.AddAssemblyTypes<IRepository>(Assembly.GetExecutingAssembly());
             services.AddScoped<IProfileService, ProfileGrpcService>();
             services.AddScoped<IProfileGrpcServiceAdapter, ProfileGrpcServiceAdapter>();
 
